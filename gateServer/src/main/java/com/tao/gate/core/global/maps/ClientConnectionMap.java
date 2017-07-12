@@ -84,7 +84,7 @@ public class ClientConnectionMap {
 			registerUserId(userId, netId);
 		}
 		else {
-			logger.error("NetId: {} 不存在与map中。", netId);
+			logger.error("NetId: {} 不存在于map中.", netId);
 			return;
 		}
 		
