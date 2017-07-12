@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 配置所有的bean和依赖关系 -->
+
+    <!-- 用于持有ApplicationContext,可以使用SpringContextHolder.getBean('xxxx')的静态方法得到spring bean对象 -->
+    <bean id="springContextHolder" class="com.tao.gate.core.global.reference.SpringContextHolder">
+    </bean>
+
+    <!-- gateServer服务器 -->
+    <bean id="gateServer" class="com.tao.gate.core.server.GateServer">
+        <property name="clientMessageDispatcher" ref="clientMessageDispatcher"/>
+    </bean>
+
+    <!-- 客户端消息分发器dispatcher -->
+    <bean id="clientMessageDispatcher" class="com.tao.gate.core.global.dispatcher.ClientMessageDispatcher">
+
+    </bean>
+
+
+
+</beans>

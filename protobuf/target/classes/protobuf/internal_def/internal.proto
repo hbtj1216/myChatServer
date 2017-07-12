@@ -1,0 +1,35 @@
+option java_package = "com.tao.protobuf.message.internal";
+option java_outer_classname = "Internal";
+
+//服务器内部消息类定义
+
+
+//GTransfer消息发往的目的地类型
+enum DestType {
+	Client = 1;		//发向客户端
+	Gate = 2;		//发向Gate网关服务器
+	Auth = 3;		//发向Auth认证服务器
+	Logic = 4;		//发向Logic逻辑服务器
+}
+
+
+//服务器间的中转协议
+message GTransfer {
+	required DestType dest = 1;		//目的地
+	optional uint64 netId = 2;		//全局唯一netId
+	required string userId = 3;		//用户Id
+	required uint32 ptoNum = 4;		//协议类型码
+	required bytes msg = 5; 		//协议消息的字节流
+}
+
+
+//服务间建立连接时发送的协议
+message Greet {
+    enum From {   
+        Gate  = 1;
+        Auth  = 2;
+        Logic = 3;
+    }
+    required From from = 1;
+}
+

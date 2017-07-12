@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Autowired自动装配 -->
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+    <!-- 引入其他的配置文件 -->
+    <import resource="spring-dao.xml"/>
+    <import resource="spring-service.xml"/>
+
+
+    <!-- 保存ctx -->
+    <bean id="springContextHolder" class="com.tao.auth.core.global.reference.SpringContextHolder"/>
+
+
+    <!-- 各种bean -->
+    <!-- AuthServer -->
+    <bean id="authServer" class="com.tao.auth.core.server.AuthServer">
+        <property name="authCenter" ref="authCenter"/>
+    </bean>
+
+    <!-- AuthCenter认证中心 -->
+    <bean id="authCenter" class="com.tao.auth.core.component.AuthCenter" init-method="startWorkers">
+    </bean>
+</beans>

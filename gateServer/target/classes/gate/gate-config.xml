@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate id="1">
+	<gateServer 	ip = "0.0.0.0" 		port = "9090" />
+	<auth   		ip = "127.0.0.1" 	port = "8080" />
+	<logic  		ip = "127.0.0.1" 	port = "7070" />
+</gate>

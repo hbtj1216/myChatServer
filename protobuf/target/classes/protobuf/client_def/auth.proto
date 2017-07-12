@@ -1,0 +1,39 @@
+option java_package = "com.tao.protobuf.message.client2server.auth";	//生成的类存放的包名
+option java_outer_classname = "Auth";	//生成的java类的类名
+
+
+//认证类消息体定义
+
+
+/*
+客户端注册类
+*/
+message CRegister {
+	required string userId = 1;		//用户名
+	required string password = 2;	//密码
+	required string nickName = 3;	//昵称
+}
+
+/*
+客户端登录类
+*/
+message CLogin {
+	required string userId = 1;		//用户账户id
+	required string password = 2;	//用户账户密码
+	optional string platform = 3;	//客户端平台: android, ios, web
+	optional string appVersion = 4;	//APP版本号
+}
+
+/*
+服务器应答类
+code:
+200 -- ok
+404 -- error
+300 -- dumplicated registery
+*/
+message SResponse {
+	required int32 code = 1;		//应答的返回码
+	required string content = 2;	//应答的内容
+}
+
+

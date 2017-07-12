@@ -1,0 +1,22 @@
+option java_package = "com.tao.protobuf.message.client2server.chat";
+option java_outer_classname = "Chat";
+
+//聊天类消息体定义
+
+
+/*
+客户端聊天消息类
+*/
+message CChatMsg {
+	required string senderId = 1;		//消息发送者的userId
+	required string receiverId = 2;		//消息接收者的userId
+	required string content = 3;		//消息内容
+}
+
+
+/*
+服务器之间的消息体
+*/
+message SChatMsg {
+	required string content = 1;	//消息内容
+}
