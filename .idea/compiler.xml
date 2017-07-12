@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="authServer" />
+        <module name="client" />
+        <module name="common-utils" />
+        <module name="gateServer" />
+        <module name="logicServer" />
+        <module name="protobuf" />
+        <module name="thirdparty" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="authServer" target="1.8" />
+      <module name="client" target="1.8" />
+      <module name="common-utils" target="1.8" />
+      <module name="gateServer" target="1.8" />
+      <module name="logicServer" target="1.8" />
+      <module name="myChatServer" target="1.8" />
+      <module name="protobuf" target="1.8" />
+      <module name="thirdparty" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/authServer/authServer.iml" filepath="$PROJECT_DIR$/authServer/authServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client/client.iml" filepath="$PROJECT_DIR$/client/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-utils/common-utils.iml" filepath="$PROJECT_DIR$/common-utils/common-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateServer/gateServer.iml" filepath="$PROJECT_DIR$/gateServer/gateServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logicServer/logicServer.iml" filepath="$PROJECT_DIR$/logicServer/logicServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myChatServer.iml" filepath="$PROJECT_DIR$/myChatServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/protobuf/protobuf.iml" filepath="$PROJECT_DIR$/protobuf/protobuf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thirdparty/thirdparty.iml" filepath="$PROJECT_DIR$/thirdparty/thirdparty.iml" />
+    </modules>
+  </component>
+</project>
