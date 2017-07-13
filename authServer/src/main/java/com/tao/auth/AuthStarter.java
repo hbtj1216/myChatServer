@@ -24,8 +24,6 @@ public class AuthStarter {
     public static int authServerPort; //authServer监听的端口
     public static int workerNum;      //worker的数量
 
-    public static String redisIp;
-    public static int redisPort;
 
 
     public static void main(String[] args) {
@@ -45,12 +43,6 @@ public class AuthStarter {
         authServerPort = Integer.valueOf(authServerElement.attributeValue("port").trim());
         workerNum = Integer.valueOf(authServerElement.attributeValue("workerNum").trim());
         logger.info("authServerPort : {}, workerNum : {}", authServerPort, workerNum);
-
-        Element redisElement = auth.element("redis");
-        redisIp = redisElement.attributeValue("ip").trim();
-        redisPort = Integer.valueOf(redisElement.attributeValue("port").trim());
-        logger.info("redisIp : {}, redisPort : {}", redisIp, redisPort);
-
 
 
         //读取spring

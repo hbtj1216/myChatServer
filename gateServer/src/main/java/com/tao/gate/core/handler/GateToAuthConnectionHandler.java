@@ -47,7 +47,7 @@ public class GateToAuthConnectionHandler extends SimpleChannelInboundHandler<Mes
 		//连接创建成功, 保存ctx到静态域中,便于外部类使用
 		this.gateToAuthConnectionContext = ctx;
 		logger.info("[GateServer to AuthServer] 连接已经建立成功.");
-		
+
 		//向AuthServer发送Greet协议消息
 		sendGreetToAuthServer();
 	}
@@ -66,7 +66,7 @@ public class GateToAuthConnectionHandler extends SimpleChannelInboundHandler<Mes
 
 	@Override
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-		// TODO Auto-generated method stub
+
 		cause.printStackTrace();
 	}
 
@@ -94,6 +94,7 @@ public class GateToAuthConnectionHandler extends SimpleChannelInboundHandler<Mes
 		//包装成GTranser
 		ByteBuf buf = ProtobufUtils.pack2Server(Internal.DestType.Auth, 
 						-1, "admin", PtoNum.GREET, greetB.build());
+
 		//发送给Auth
 		ChannelFuture future = gateToAuthConnectionContext.writeAndFlush(buf);
 		future.addListener(new ChannelFutureListener() {

@@ -25,7 +25,9 @@ public class ProtoPacketDecoder extends ByteToMessageDecoder {
 	
 	@Override
 	protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
-		
+
+		logger.info("解码器被调用.");
+
 		in.markReaderIndex();
 		
 		//如果可读的字节数 < 4字节, 直接忽略

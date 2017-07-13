@@ -78,10 +78,11 @@ public class AuthServerHandler extends SimpleChannelInboundHandler<Message> {
         //如果是Greet类型的消息
         if(message instanceof Internal.Greet) {
 
-            logger.info("[AuthServer] received Greet message from [gateServer].");
+            logger.info("[AuthServer] received [Greet] message from [GateServer].");
             //处理Greet请求
             msgHandler = HandlerManager.getMsgHandler(ptoNum, gt.getUserId(), gt.getNetId(), message, ctx);
         } else {
+            logger.info("[AuthServer] received [{}] message from [GateServer].", message.getClass().getSimpleName());
             //处理认证请求
             msgHandler = HandlerManager.getMsgHandler(ptoNum, gt.getUserId(), gt.getNetId(), message, getGateConnCtx());
         }

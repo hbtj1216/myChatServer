@@ -23,7 +23,8 @@ public class ProtoPacketEncoder extends MessageToByteEncoder<Message> {
 
 	@Override
 	protected void encode(ChannelHandlerContext ctx, Message msg, ByteBuf out) throws Exception {
-		
+
+	    logger.info("编码器被调用. message : {}", msg.getClass().getSimpleName());
 		//这里的Message类是protobuf协议中的message
 		//将msg转换成bytes数组
 		byte[] bytes = msg.toByteArray();
@@ -40,13 +41,13 @@ public class ProtoPacketEncoder extends MessageToByteEncoder<Message> {
 		buf.writeInt(length);
 		buf.writeInt(ptoNum);
 		buf.writeBytes(bytes);
-		
-		//发送
-		out.writeBytes(buf);
-		
+
 		logger.info("发送了一条消息。remoteAddress: {}, "
 				+ "content length {}, ptoNum: {}", ctx.channel().remoteAddress(), length, ptoNum);
-		
+
+		//发送
+		out.writeBytes(buf);
+
 	}
 	
 }

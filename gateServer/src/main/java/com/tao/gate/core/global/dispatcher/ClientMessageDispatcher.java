@@ -40,7 +40,8 @@ public final class ClientMessageDispatcher implements Runnable {
 	private static final Logger logger = LoggerFactory.getLogger(ClientMessageDispatcher.class);
 
 	/**
-	 * 分发器中的session缓存区, 用于缓存客户端连接及其对应的消息队列。
+	 * 分发器中的session缓存区, 用于缓存客户端连接及其对应的消息队列.
+	 * 每一个netId都对应一个MessageQueue.
 	 * key = netId, value = 该客户端连接的消息队列
 	 */
 	private final Map<Long, MessageQueue> clientSessionMap;
@@ -138,6 +139,8 @@ public final class ClientMessageDispatcher implements Runnable {
 		else {
 			messageQueue.add(requestMessage);
 		}
+		logger.info("向 netId: {} 对应的MessageQueue中添加一个消息 message: {}.", netId,
+                message.getClass().getSimpleName());
 	}
 	
 	
@@ -288,7 +291,7 @@ public final class ClientMessageDispatcher implements Runnable {
 						clientConnection.getNetId(),
 						((Auth.CLogin)message).getUserId(),
 						ParseMap.getPtoNum(message), message);
-				//需要向ClientConnectionMap中登记用户
+				//需要向ClientConnectionMap中登记用户Id
 				ClientConnectionMap.registerUserId(((Auth.CLogin)message).getUserId(), clientConnection.getNetId());
 			}
 

@@ -37,8 +37,8 @@ public class HandlerManager {
 
     /**
      * 向HandlerManager中注册消息以及对应的MsgHandler.
-     * @param message
-     * @param msgHandler
+     * @param messageClazz
+     * @param msgHandlerClazz
      */
     public static void register(Class<? extends Message> messageClazz, Class<? extends MsgHandler> msgHandlerClazz) {
 
@@ -88,10 +88,14 @@ public class HandlerManager {
      */
     public static void initMsgHandlers() {
 
+        logger.info("初始化消息处理器...");
+
         HandlerManager.register(Internal.Greet.class, GreetHandler.class);
         HandlerManager.register(Auth.CRegister.class, CRegisterHandler.class);
         HandlerManager.register(Auth.CLogin.class, CLoginHandler.class);
         //HandlerManager.register(Chat.CChatMsg.class, CChatMsgHandler.class);
+
+        logger.info("消息处理器初始化完毕.");
 
     }
 

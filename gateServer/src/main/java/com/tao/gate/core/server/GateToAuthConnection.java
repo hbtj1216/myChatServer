@@ -27,14 +27,21 @@ public class GateToAuthConnection implements Runnable {
 	
 	private static final Logger logger = LoggerFactory.getLogger(GateToAuthConnection.class);
 	
-	private String authIp;
-	private int authPort;
+	private String authIp;	//authServer的地址
+	private int authPort;	//authServer的端口号
 	
 	
 	public GateToAuthConnection(String authIp, int authPort) {
 
 		this.authIp = authIp;
 		this.authPort = authPort;
+	}
+
+
+	@Override
+	public void run() {
+
+		this.buildGateToAuthConnection();
 	}
 	
 	
@@ -85,11 +92,7 @@ public class GateToAuthConnection implements Runnable {
 	}
 
 
-	@Override
-	public void run() {
-		
-		this.buildGateToAuthConnection();
-	}
+
 	
 }
 

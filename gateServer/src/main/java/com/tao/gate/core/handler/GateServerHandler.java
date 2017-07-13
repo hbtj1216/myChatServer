@@ -71,7 +71,7 @@ public class GateServerHandler extends SimpleChannelInboundHandler<Message>{
 	 * 
 	 */
 	@Override
-	protected void channelRead0(ChannelHandlerContext ctx, Message message) throws Exception {
+	protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {
 		
 		/**
 		 * 注意：
@@ -83,7 +83,7 @@ public class GateServerHandler extends SimpleChannelInboundHandler<Message>{
 		//获得对应的clientConnection对象
 		ClientConnection clientConnection = ClientConnectionMap.getClientConnection(ctx);
 		//通过分发器分发消息
-		this.clientMessageDispatcher.addMessage(clientConnection, message);
+		this.clientMessageDispatcher.addMessage(clientConnection, msg);
 		
 	}
 	

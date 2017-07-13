@@ -19,9 +19,9 @@ public class ClientConnectionMap {
 
 	private static final Logger logger = LoggerFactory.getLogger(ClientConnectionMap.class);
 	
-	//保存一个gateServer上的所有客户端的连接,键为netId, 值为clientConnection
+	//保存一个gateServer上的所有客户端的连接(连接不代表登录),键为netId, 值为clientConnection
 	private static ConcurrentHashMap<Long, ClientConnection> allClientMap = new ConcurrentHashMap<>();
-	//维护userId和其对应的netId的map
+	//维护userId和其对应的netId的map(登录用户的缓存)
 	private static ConcurrentHashMap<String, Long> userId2netIdMap = new ConcurrentHashMap<>();
 	
 	
@@ -76,17 +76,18 @@ public class ClientConnectionMap {
 		
 		long netId = clientConnection.getNetId();
 		String userId = clientConnection.getUserId();
+		//logger.info("将要被添加到缓存中的ClientConnection. netId: {}, userId: {}", netId, userId);
 		//将clientConnection添加到map中
 		//putIfAbsent会保证如果value != null, 不会覆盖原来的值
+		//logger.info("添加之前allClientMap: {}", allClientMap);
 		if(allClientMap.putIfAbsent(netId, clientConnection) != null) {
-			logger.info("clientConnection添加成功。");
-			//注册userId
-			registerUserId(userId, netId);
+		    //返回值 ！= null, 说明已经存在
+			logger.info("clientConnection已经存在, netId: {}", netId);
+		} else {
+		    //返回值 == null, 说明是新的值, 并已经添加到了map中
+			logger.error("新用户的clientConnection已经添加到map中, netId: {}", netId);
 		}
-		else {
-			logger.error("NetId: {} 不存在于map中.", netId);
-			return;
-		}
+		//logger.info("添加之后allClientMap: {}", allClientMap);
 		
 	}
 	
@@ -108,8 +109,7 @@ public class ClientConnectionMap {
 				unRegisterUserId(userId);
 			}
 			else {
-				logger.error("NetId: {} 不存在与map中。", netId);
-				return;
+				logger.error("netId: {} 不存在与map中。", netId);
 			}
 		}
 		
@@ -125,12 +125,12 @@ public class ClientConnectionMap {
 		long netId = clientConnection.getNetId();
 		String userId = clientConnection.getUserId();
 		if(allClientMap.remove(netId) != null) {
-			logger.info("clientConnection移除成功。");
+			logger.info("从缓存中注销clientConnection.");
 			//注销userId
 			unRegisterUserId(userId);
 		}
 		else {
-			logger.error("NetId: {} 不存在与map中。", netId);
+			logger.error("netId: {} 不存在与map中。", netId);
 			return;
 		}
 	}
@@ -142,16 +142,26 @@ public class ClientConnectionMap {
 	 * @param netId
 	 */
 	public static void registerUserId(String userId, long netId) {
-		
-		if(userId2netIdMap.putIfAbsent(userId, netId) != null) {
-			logger.info("userId={} 注册成功.", userId);
-		}
-		else {
-			logger.error("userId={} 注册失败.", userId);
-			return;
-		}
+
+	    if(userId2netIdMap.putIfAbsent(userId, netId) == null) {
+	        //返回值 == null, 说明是新的登陆的用户
+            logger.info("新用户登录! userId: {}, netId: {}", userId, netId);
+
+            ClientConnection conn = ClientConnectionMap.getClientConnection(netId);
+            logger.info("userId: {} 对应的的clientConnection: {}", userId, conn);
+            if(conn != null) {
+                conn.setUserId(userId);
+            } else {
+                logger.error("userId: {} 对应的clientConnection为null.", userId);
+            }
+            /*ClientConnection coon2 = ClientConnectionMap.getClientConnection(netId);
+            logger.info("register之后的conn: {}", coon2);*/
+        } else {
+	        //返回值 ！= null, 说明该用户已经登录
+            logger.error("userId: {} 用户已经登录, 并在userId2netIdMap缓存中注册过!", userId);
+        }
+
 	}
-	
 	
 	/**
 	 * 注销userId
