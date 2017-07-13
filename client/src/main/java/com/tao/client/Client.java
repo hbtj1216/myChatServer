@@ -21,7 +21,7 @@ public class Client {
     private static final String chatServerIp = "127.0.0.1"; //聊天服务器的ip
     private static final int chatServerPort = 9090;         //聊天服务器的port
 
-    private static final int clientNum = 10;
+    private static final int clientNum = 1;
     private static final int frequency = 100;   //100ms
 
 
@@ -51,9 +51,10 @@ public class Client {
 
                         pipeline.addLast("ProtobufPacketDecoder", new ProtoPacketDecoder());	    //解码器
                         pipeline.addLast("ProtobufPacketEncoder", new ProtoPacketEncoder());    //编码器
-                        //pipeline.addLast("clientHandler", new ClientHandler()); //客户端消息处理类
+                        pipeline.addLast("clientHandler", new ClientHandler());                     //客户端消息处理类
                     }
                 });
+
 
         //启动多个客户端
         for(int i = 1; i <= clientNum; i++) {
@@ -67,6 +68,11 @@ public class Client {
     }
 
 
+    /**
+     * 启动连接(第i个)
+     * @param bootstrap
+     * @param i
+     */
     private void startConnection(Bootstrap bootstrap, int i) {
 
         ChannelFuture future = bootstrap.connect(chatServerIp, chatServerPort);

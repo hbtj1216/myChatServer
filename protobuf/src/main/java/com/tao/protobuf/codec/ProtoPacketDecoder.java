@@ -69,7 +69,8 @@ public class ProtoPacketDecoder extends ByteToMessageDecoder {
 			//根据ptoNum和消息内容的字节数组, 获得对应的protobuf Message对象
 			Message msg = ParseMap.getMessage(ptoNum, body);
 			out.add(msg);
-			logger.info("收到一条消息: content length {}, ptoNum: {}", length, ptoNum);
+			logger.info("收到一条消息: content length {}, ptoNum: {}, msg: {}", length, ptoNum,
+					msg.getClass().getSimpleName());
 			
 		} catch (Exception e) {
 			logger.error(ctx.channel().remoteAddress() + ",解码失败.", e);

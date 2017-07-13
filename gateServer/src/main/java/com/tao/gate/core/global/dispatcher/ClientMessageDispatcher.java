@@ -231,7 +231,7 @@ public final class ClientMessageDispatcher implements Runnable {
 
 			//获得内部的message对象
 			Message message = requestMessage.getMessage();
-			logger.info("MessageName: {}", message.getClass());
+			logger.info("dispatcher处理一个消息, messageName: [{}]", message.getClass().getSimpleName());
 
 			//根据Message种类, 选择正确的处理方法
 			/**
@@ -293,6 +293,7 @@ public final class ClientMessageDispatcher implements Runnable {
 			}
 
 			//获取Gate->Auth的连接, 并将消息发送给AuthServer
+			logger.info("GateServer send [{}] message to AuthServer.", message.getClass().getSimpleName());
 			ChannelHandlerContext gate2AuthConnCtx = GateToAuthConnectionHandler.getGateToAuthConnectionContext();
 			gate2AuthConnCtx.channel().writeAndFlush(sendBuf);
 

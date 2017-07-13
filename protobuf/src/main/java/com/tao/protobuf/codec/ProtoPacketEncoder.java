@@ -28,7 +28,7 @@ public class ProtoPacketEncoder extends MessageToByteEncoder<Message> {
 		//将msg转换成bytes数组
 		byte[] bytes = msg.toByteArray();
 		//获得msg对应的ptoNum的值
-		int ptoNum = ParseMap.msg2ptoNum.get(msg);	//???
+		int ptoNum = ParseMap.msg2ptoNum.get(msg);
 		//计算消息内容的长度
 		int length = bytes.length;
 		
@@ -44,7 +44,7 @@ public class ProtoPacketEncoder extends MessageToByteEncoder<Message> {
 		//发送
 		out.writeBytes(buf);
 		
-		logger.info("GateServer 发送了一条消息。remoteAddress: {}, "
+		logger.info("发送了一条消息。remoteAddress: {}, "
 				+ "content length {}, ptoNum: {}", ctx.channel().remoteAddress(), length, ptoNum);
 		
 	}
