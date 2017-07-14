@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="270d2fe7-a114-4b5c-8772-3d30b585c62b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/java/com/tao/client/Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/constant/Common.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/constant/AuthConstant.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/constant/AuthConstant.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/RedisTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/component/AuthCenter.class" afterPath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/component/AuthCenter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/handler/messageHandler/CLoginHandler.class" afterPath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/handler/messageHandler/CLoginHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/handler/messageHandler/CRegisterHandler.class" afterPath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/handler/messageHandler/CRegisterHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/com/tao/client/Client$1.class" afterPath="$PROJECT_DIR$/client/target/classes/com/tao/client/Client$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/com/tao/client/Client$2.class" afterPath="$PROJECT_DIR$/client/target/classes/com/tao/client/Client$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/com/tao/client/Client.class" afterPath="$PROJECT_DIR$/client/target/classes/com/tao/client/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/com/tao/client/ClientHandler.class" afterPath="$PROJECT_DIR$/client/target/classes/com/tao/client/ClientHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/GateStarter.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/GateStarter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/global/maps/ClientConnectionMap.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/global/maps/ClientConnectionMap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/handler/GateToAuthConnectionHandler$1.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/handler/GateToAuthConnectionHandler$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/handler/GateToAuthConnectionHandler.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/handler/GateToAuthConnectionHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/authServer.iml" afterPath="$PROJECT_DIR$/authServer/authServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/AuthStarter.java" afterPath="$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/AuthStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/component/AuthCenter.java" afterPath="$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/component/AuthCenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/handler/messageHandler/CLoginHandler.java" afterPath="$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/handler/messageHandler/CLoginHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/handler/messageHandler/CRegisterHandler.java" afterPath="$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/handler/messageHandler/CRegisterHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/src/main/resources/auth/auth-config.xml" afterPath="$PROJECT_DIR$/authServer/src/main/resources/auth/auth-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/target/classes/auth/auth-config.xml" afterPath="$PROJECT_DIR$/authServer/target/classes/auth/auth-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/client.iml" afterPath="$PROJECT_DIR$/client/client.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/com/tao/client/Client.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/tao/client/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common-utils/common-utils.iml" afterPath="$PROJECT_DIR$/common-utils/common-utils.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/gateServer.iml" afterPath="$PROJECT_DIR$/gateServer/gateServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/GateStarter.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/GateStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToAuthConnectionHandler.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToAuthConnectionHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/resources/gate/gate-config.xml" afterPath="$PROJECT_DIR$/gateServer/src/main/resources/gate/gate-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/gate/gate-config.xml" afterPath="$PROJECT_DIR$/gateServer/target/classes/gate/gate-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/logicServer.iml" afterPath="$PROJECT_DIR$/logicServer/logicServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/LogicStarter.java" afterPath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/LogicStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/component/LogicCenter.java" afterPath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/component/LogicCenter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/src/main/resources/logic/logic-config.xml" afterPath="$PROJECT_DIR$/logicServer/src/main/resources/logic/logic-config.xml" />
-    </list>
+    <list default="true" id="270d2fe7-a114-4b5c-8772-3d30b585c62b" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/protobuf/target/" />
     <ignored path="$PROJECT_DIR$/client/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1303,16 +1263,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1500010553632</updated>
-      <workItem from="1500010561728" duration="4861000" />
+      <workItem from="1500010561728" duration="5061000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4861000" />
+    <option name="totallyTimeSpent" value="5061000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1600" height="857" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1323,7 +1282,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29532966" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25137362" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
