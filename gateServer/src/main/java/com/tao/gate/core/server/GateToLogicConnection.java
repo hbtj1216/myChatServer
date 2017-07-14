@@ -35,6 +35,14 @@ public class GateToLogicConnection implements Runnable {
 		this.logicIp = logicIp;
 		this.logicPort = logicPort;
 	}
+
+
+
+	@Override
+	public void run() {
+
+		this.buildGateToLogicConnection();
+	}
 	
 	
 	/**
@@ -61,8 +69,7 @@ public class GateToLogicConnection implements Runnable {
 					
 					pipeline.addLast("ProtobufPacketDecoder", new ProtoPacketDecoder());	//解码器
 					pipeline.addLast("ProtobufPacketEncoder", new ProtoPacketEncoder());	//编码器
-                    //Logic -> gate
-                    //处理从Logic发往Gate的消息的 处理器
+                    //处理从Logic发往Gate的消息的 handler
                     pipeline.addLast("GateToLogicConnectionHandler", new GateToLogicConnectionHandler());
 				}
 			});
@@ -85,11 +92,7 @@ public class GateToLogicConnection implements Runnable {
 	}
 
 
-	@Override
-	public void run() {
-		
-		this.buildGateToLogicConnection();
-	}
+
 	
 }
 

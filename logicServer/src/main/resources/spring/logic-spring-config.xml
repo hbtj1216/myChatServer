@@ -7,7 +7,11 @@
     <!-- logicServer 的 SpringContextHolder -->
     <bean class="com.tao.logic.core.global.reference.SpringContextHolder"/>
 
+    <!-- 逻辑服务器 -->
     <bean id="logicServer" class="com.tao.logic.core.server.LogicServer">
-
+        <property name="logicCenter" ref="logicCenter"/>
     </bean>
+
+    <!-- logicCenter逻辑处理中心 -->
+    <bean id="logicCenter" class="com.tao.logic.core.component.LogicCenter" init-method="startWorkers"/>
 </beans>

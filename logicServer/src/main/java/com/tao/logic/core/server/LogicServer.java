@@ -4,6 +4,7 @@ package com.tao.logic.core.server;
  * Created by tao on 2017/7/6.
  */
 
+import com.tao.logic.core.component.LogicCenter;
 import com.tao.logic.core.global.HandlerManager;
 import com.tao.logic.core.handler.LogicServerHandler;
 import com.tao.protobuf.ParseRegistryMap;
@@ -29,6 +30,10 @@ public final class LogicServer implements Runnable {
     
     private int port;   //logicServer监听的端口
 
+    private LogicCenter logicCenter;    //逻辑处理中心
+
+
+
 
     @Override
     public void run() {
@@ -39,6 +44,9 @@ public final class LogicServer implements Runnable {
 
     private void startLogicServer(int port) {
 
+        /**
+         * logicServer作为服务器, 等待GateServer连接.
+         */
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
@@ -54,7 +62,7 @@ public final class LogicServer implements Runnable {
 
                         pipeline.addLast("ProtobufPacketDecoder", new ProtoPacketDecoder());	//解码器
                         pipeline.addLast("ProtobufPacketEncoder", new ProtoPacketEncoder());	//编码器
-                        pipeline.addLast("LogicServerHandler", new LogicServerHandler());
+                        pipeline.addLast("LogicServerHandler", new LogicServerHandler(logicCenter));
                     }
                 });
 
@@ -64,7 +72,7 @@ public final class LogicServer implements Runnable {
 
 
         //绑定端口, 启动连接
-        ChannelFuture future = serverBootstrap.bind(new InetSocketAddress(this.port));
+        ChannelFuture future = serverBootstrap.bind(new InetSocketAddress(port));
         future.addListener(new ChannelFutureListener() {
 
             @Override
@@ -102,6 +110,14 @@ public final class LogicServer implements Runnable {
 
     public void setPort(int port) {
         this.port = port;
+    }
+
+    public LogicCenter getLogicCenter() {
+        return logicCenter;
+    }
+
+    public void setLogicCenter(LogicCenter logicCenter) {
+        this.logicCenter = logicCenter;
     }
 }
 

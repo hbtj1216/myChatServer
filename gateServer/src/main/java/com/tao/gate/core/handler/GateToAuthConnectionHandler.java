@@ -111,7 +111,7 @@ public class GateToAuthConnectionHandler extends SimpleChannelInboundHandler<Mes
 		ByteBuf buf = ProtobufUtils.pack2Server(Internal.DestType.Auth, 
 						-1, "admin", PtoNum.GREET, greetB.build());
 
-		//发送给Auth
+		//发送给AuthServer
 		ChannelFuture future = gateToAuthConnectionContext.writeAndFlush(buf);
 		future.addListener(new ChannelFutureListener() {
 			

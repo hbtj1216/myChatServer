@@ -76,7 +76,7 @@ public class HandlerManager {
         Constructor<? extends MsgHandler> constructor = msgHandlerMap.get(ptoNum);
         if(constructor == null) {
             //没有
-            logger.info("msgHAndler not exist, ptoNum : {}", ptoNum);
+            logger.info("msgHandler not exist, ptoNum : {}", ptoNum);
             return null;
         }
         //有, 通过构造函数创建对象

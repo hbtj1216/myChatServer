@@ -35,7 +35,7 @@ public class GateToLogicConnectionHandler extends SimpleChannelInboundHandler<Me
 	@Override
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
 
-		this.gateToLogicConnectionContext = ctx;
+		gateToLogicConnectionContext = ctx;
 		logger.info("[GateServer to LogicServer] 连接已经建立成功.");
 
 		//向LogicServer发送Greet协议消息
@@ -45,7 +45,7 @@ public class GateToLogicConnectionHandler extends SimpleChannelInboundHandler<Me
 	@Override
 	public void channelInactive(ChannelHandlerContext ctx) throws Exception {
 
-		this.gateToLogicConnectionContext = null;
+		gateToLogicConnectionContext = null;
 		logger.info("[GateServer to LogicServer] 连接已经断开.");
 	}
 
@@ -70,10 +70,12 @@ public class GateToLogicConnectionHandler extends SimpleChannelInboundHandler<Me
 
 		Internal.Greet.Builder greetB = Internal.Greet.newBuilder();
 		greetB.setFrom(Internal.Greet.From.Gate);
+
 		//包装成GTranser
 		ByteBuf buf = ProtobufUtils.pack2Server(Internal.DestType.Logic,
 				-1, "admin", PtoNum.GREET, greetB.build());
-		//发送给Auth
+
+		//发送给LogicServer
 		ChannelFuture future = gateToLogicConnectionContext.writeAndFlush(buf);
 		future.addListener(new ChannelFutureListener() {
 

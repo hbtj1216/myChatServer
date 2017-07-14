@@ -30,7 +30,7 @@ public class GreetHandler extends MsgHandler {
     public void excute(Worker worker) throws Exception {
         //连接成功, 设置gateConnCtx
         AuthServerHandler.setGateConnCtx(this.ctx);
-        logger.info("[Gate-Auth] connection is established");
+        logger.info("[GateServer-AuthServer] connection is established");
     }
 }
 

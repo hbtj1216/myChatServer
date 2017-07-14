@@ -31,20 +31,9 @@ public class GreetHandler extends MsgHandler {
     @Override
     public void excute(Worker worker) throws Exception {
 
-        //首先获得Greet对象
-        Internal.Greet greet = (Internal.Greet) msg;
-        Internal.Greet.From from = greet.getFrom();
-
-        //判断Greet消息是从GateServer还是AuthServer发来的
-        if(from == Internal.Greet.From.Gate) {
-            //从Gate发来的
-            LogicServerHandler.setGateConnCtx(ctx);
-            logger.info("[GateServer to LogicServer] connection is established.");
-
-        } else if(from == Internal.Greet.From.Auth) {
-            LogicServerHandler.setAuthConnCtx(ctx);
-            logger.info("[AuthServer to LogicServer] connection is established.");
-        }
+        //从Gate发来的
+        LogicServerHandler.setGateConnCtx(ctx);
+        logger.info("[GateServer-LogicServer] connection is established.");
 
     }
 }

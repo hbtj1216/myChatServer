@@ -56,7 +56,7 @@ public class Worker extends Thread {
 
 
             try {
-                //执行msgHandler的excute方法，处理消息.
+                //执行msgHandler的excute方法, 处理消息.
                 msgHandler.excute(this);
             } catch (Exception e) {
                 e.printStackTrace();

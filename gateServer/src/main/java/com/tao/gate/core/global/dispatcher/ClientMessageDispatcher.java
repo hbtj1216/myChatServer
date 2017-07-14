@@ -292,6 +292,7 @@ public final class ClientMessageDispatcher implements Runnable {
 				//在发送CLogin消息之前, 需要先判断是否已经登录
                 String userId = ((Auth.CLogin)message).getUserId();
 				boolean isLogin = ClientConnectionMap.isUserLogin(userId);
+
                 if(isLogin) {
                     //如果已经登录, 不允许重复登录
                     //向客户端发送重复登录的警告!
@@ -319,7 +320,7 @@ public final class ClientMessageDispatcher implements Runnable {
 
 
 		/**
-		 * 转发给LogicServer处理.
+		 * 聊天消息转发给LogicServer处理.
 		 * @param requestMessage
 		 */
 		private void forwardToLogicServer(RequestMessage requestMessage) {

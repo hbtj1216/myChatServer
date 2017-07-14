@@ -21,8 +21,8 @@ public class LogicStarter {
     private final static Logger logger = LoggerFactory.getLogger(LogicStarter.class);
 
 
-    public static int logicServerPort;
-    public static  int workerNum;
+    public static int logicServerPort;  //logicServer端口号
+    public static  int workerNum;       //工作线程的数量
 
     public static String redisIp;
     public static int redisPort;
@@ -36,7 +36,7 @@ public class LogicStarter {
 
 
     /**
-     * 配置和启动服务
+     * 配置和启动服务.
      */
     public static void configAndStart() {
 
@@ -45,7 +45,7 @@ public class LogicStarter {
 
         assert logic != null;
         Element logicServerElement = logic.element("logicServer");
-        logicServerPort = Integer.valueOf(logicServerElement.attributeValue("ip").trim());
+        logicServerPort = Integer.valueOf(logicServerElement.attributeValue("port").trim());
         workerNum = Integer.valueOf(logicServerElement.attributeValue("workerNum").trim());
         logger.info("logicServerPort: {}, workerNum: {}", logicServerPort, workerNum);
 
