@@ -29,11 +29,11 @@ public class AuthServerHandler extends SimpleChannelInboundHandler<Message> {
 
     private AuthCenter authCenter;  //认证中心
 
-    /**
-     * 缓存.
-     * loginMap保存所有通过login认证的userId以及对应的netId.
-     */
-    private static Map<String, Long> loginMap = new HashMap<>(); //userId到netId的映射map
+//    /**
+//     * 登录的用户的缓存.
+//     * loginMap保存所有通过login认证的userId以及对应的netId.
+//     */
+//    private static Map<String, Long> loginMap = new HashMap<>(); //userId到netId的映射map
 
 
     private static ChannelHandlerContext gateConnCtx;  //gate连接的ctx
@@ -104,30 +104,58 @@ public class AuthServerHandler extends SimpleChannelInboundHandler<Message> {
 
 
 
-    /**
-     * 添加userId到nwetId的映射.
-     * @param userId
-     * @param netId
-     */
-    public static void putUserIdAndNetId(String userId, Long netId) {
-
-        loginMap.put(userId, netId);
-    }
-
-
-    /**
-     * 通过userId获得netId.
-     * @param userId
-     * @return
-     */
-    public static Long getNetIdByUserId(String userId) {
-        Long netId = loginMap.get(userId);
-        if(netId != null) {
-            return netId;
-        } else {
-            return null;
-        }
-    }
+//    /**
+//     * 向缓存中注册登录成功的用户.
+//     * 添加userId到nwetId的映射.
+//     * @param userId
+//     * @param netId
+//     */
+//    public static void registerLoginUser(String userId, Long netId) {
+//
+//        loginMap.put(userId, netId);
+//    }
+//
+//
+//    /**
+//     * 从缓存中删除注销的用户.
+//     * @param userId
+//     */
+//    public static void unregisterLoginUser(String userId) {
+//
+//        loginMap.remove(userId);
+//    }
+//
+//
+//    /**
+//     * 判断用户是否已经登录.
+//     * @param userId
+//     * @return
+//     */
+//    public static boolean isUserLogin(String userId) {
+//
+//        Long netId = loginMap.get(userId);
+//        if(netId == null) {
+//            //不存在
+//            return false;
+//        } else {
+//            return true;
+//        }
+//    }
+//
+//
+//    /**
+//     * 通过userId获得netId.
+//     * @param userId
+//     * @return
+//     */
+//    public static Long getNetIdByUserId(String userId) {
+//        Long netId = loginMap.get(userId);
+//        if(netId != null) {
+//            return netId;
+//        } else {
+//            return null;
+//        }
+//    }
 
 
     public static ChannelHandlerContext getGateConnCtx() {

@@ -2,6 +2,7 @@ package com.tao.gate.core.handler;
 
 import com.tao.gate.core.global.maps.ClientConnectionMap;
 import com.tao.protobuf.analysis.ParseMap;
+import com.tao.protobuf.constant.Common;
 import com.tao.protobuf.constant.PtoNum;
 import com.tao.protobuf.message.client2server.auth.Auth;
 import com.tao.protobuf.message.internal.Internal;
@@ -75,17 +76,24 @@ public class GateToAuthConnectionHandler extends SimpleChannelInboundHandler<Mes
 
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {
-		
+
+	    //收到的消息为GTransfer
 		//收到AuthServer发回的消息
 		Internal.GTransfer gtf = (Internal.GTransfer) msg;
+		String userId = gtf.getUserId();    //userId
+		Long netId = gtf.getNetId();        //netId
+		//获得sResponse
 		Message message = ParseMap.getMessage(gtf.getPtoNum(), gtf.getMsg().toByteArray());
 		logger.info("[GateServer] 收到 [AuthServer] 发回的消息 : [{}]", message.getClass().getSimpleName());
 
 		//GateServer从AuthServer收到的是SResponse消息体(登录或者注册的返回信息)
-		//根据消息进行判断
+		//根据code进行判断
         Auth.SResponse sResponse = (Auth.SResponse) message;
-        logger.info("code: {}, content: {}", sResponse.getCode(), sResponse.getContent());
-
+        int code = sResponse.getCode();
+        if(code == Common.LOGIN_SUCCESS) {
+            //登录成功, 将登录的用户添加到GateServer的缓存中
+            ClientConnectionMap.registerLoginUser(userId, netId);
+        }
 		//将消息打包
 		ByteBuf buf = ProtobufUtils.pack2Client(message);
 		//找到对应的客户端连接的ctx, 将消息发送回客户端

@@ -1,6 +1,7 @@
 package com.tao.client;
 
 import com.google.protobuf.Message;
+import com.tao.protobuf.constant.Common;
 import com.tao.protobuf.message.client2server.auth.Auth;
 import com.tao.protobuf.utils.ProtobufUtils;
 import io.netty.buffer.ByteBuf;
@@ -40,7 +41,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
 
         logger.info("3秒后登录已经注册过的账号...");
         Thread.sleep(3000);
-        login(ctx, "hbtj12167", "1234567890");
+        login(ctx, "hbtj1216", "1234567890");
 
 
     }
@@ -64,28 +65,33 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
             switch (code) {
 
                 //账号未注册
-                case ClientConstant.ACCOUNT_INEXIST:
+                case Common.ACCOUNT_INEXIST:
                     logger.info("账号未注册, content : {}", content);
                     break;
 
                 //登陆成功
-                case ClientConstant.LOGIN_SUCCESS:
+                case Common.LOGIN_SUCCESS:
                     logger.info("登陆成功, content : {}", content);
                     break;
 
                 //账号或者密码错误
-                case ClientConstant.LOGIN_ERROR:
+                case Common.LOGIN_ERROR:
                     logger.info("登录失败, content : {}", content);
                     break;
 
                 //账号已被注册
-                case ClientConstant.ACCOUNT_ALREADY_EXIST:
+                case Common.ACCOUNT_ALREADY_EXIST:
                     logger.info("账号已被注册, content : {}", content);
                     break;
 
                 //账号注册成功
-                case ClientConstant.REGISTER_OK:
+                case Common.REGISTER_OK:
                     logger.info("账号注册成功, content : {}", content);
+                    break;
+
+                //重复登录
+                case Common.REPEATED_LOGIN:
+                    logger.info("账号已经登录, 不允许重复登录, content : {}", content);
                     break;
 
                 default:

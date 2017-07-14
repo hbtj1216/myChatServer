@@ -19,4 +19,5 @@ public class Common {
     public static final int ACCOUNT_INEXIST = 200;
     public static final int LOGIN_SUCCESS = 201;
     public static final int LOGIN_ERROR = 202;
+    public static final int REPEATED_LOGIN = 203;
 }

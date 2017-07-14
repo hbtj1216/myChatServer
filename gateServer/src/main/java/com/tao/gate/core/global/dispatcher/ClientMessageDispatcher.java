@@ -13,7 +13,9 @@ import com.tao.gate.core.domain.RequestMessage;
 import com.tao.gate.core.global.maps.ClientConnectionMap;
 import com.tao.gate.core.handler.GateToAuthConnectionHandler;
 import com.tao.gate.core.handler.GateToLogicConnectionHandler;
+import com.tao.gate.core.utils.RouteUtils;
 import com.tao.protobuf.analysis.ParseMap;
+import com.tao.protobuf.constant.Common;
 import com.tao.protobuf.constant.PtoNum;
 import com.tao.protobuf.message.client2server.auth.Auth;
 import com.tao.protobuf.message.client2server.chat.Chat;
@@ -286,19 +288,32 @@ public final class ClientMessageDispatcher implements Runnable {
 						ParseMap.getPtoNum(message), message);
 			}
 			else if(message instanceof Auth.CLogin) {
-				//如果是登录消息, 先包装成服务器之间的协议体GTransfer
-				sendBuf = ProtobufUtils.pack2Server(Internal.DestType.Auth,
-						clientConnection.getNetId(),
-						((Auth.CLogin)message).getUserId(),
-						ParseMap.getPtoNum(message), message);
-				//需要向ClientConnectionMap中登记用户Id
-				ClientConnectionMap.registerUserId(((Auth.CLogin)message).getUserId(), clientConnection.getNetId());
+
+				//在发送CLogin消息之前, 需要先判断是否已经登录
+                String userId = ((Auth.CLogin)message).getUserId();
+				boolean isLogin = ClientConnectionMap.isUserLogin(userId);
+                if(isLogin) {
+                    //如果已经登录, 不允许重复登录
+                    //向客户端发送重复登录的警告!
+                    logger.info("账户已经登录, 不允许重复登录, userId: {}", userId);
+                    RouteUtils.sendResponse(Common.REPEATED_LOGIN, "Repeated Login.", clientConnection);
+                } else {
+                    //如果未登录
+                    //登录消息, 先包装成服务器之间的协议体GTransfer
+                    sendBuf = ProtobufUtils.pack2Server(Internal.DestType.Auth,
+                            clientConnection.getNetId(),
+                            ((Auth.CLogin)message).getUserId(),
+                            ParseMap.getPtoNum(message), message);
+                }
+
 			}
 
-			//获取Gate->Auth的连接, 并将消息发送给AuthServer
-			logger.info("GateServer send [{}] message to AuthServer.", message.getClass().getSimpleName());
-			ChannelHandlerContext gate2AuthConnCtx = GateToAuthConnectionHandler.getGateToAuthConnectionContext();
-			gate2AuthConnCtx.channel().writeAndFlush(sendBuf);
+			if(sendBuf != null) {
+                //获取Gate->Auth的连接, 并将消息发送给AuthServer
+                logger.info("GateServer send [{}] message to AuthServer.", message.getClass().getSimpleName());
+                ChannelHandlerContext gate2AuthConnCtx = GateToAuthConnectionHandler.getGateToAuthConnectionContext();
+                gate2AuthConnCtx.channel().writeAndFlush(sendBuf);
+            }
 
 		}
 

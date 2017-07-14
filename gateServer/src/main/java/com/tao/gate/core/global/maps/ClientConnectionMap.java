@@ -20,7 +20,7 @@ public class ClientConnectionMap {
 	private static final Logger logger = LoggerFactory.getLogger(ClientConnectionMap.class);
 	
 	//保存一个gateServer上的所有客户端的连接(连接不代表登录),键为netId, 值为clientConnection
-	private static ConcurrentHashMap<Long, ClientConnection> allClientMap = new ConcurrentHashMap<>();
+	private static ConcurrentHashMap<Long, ClientConnection> allClientConnectionMap = new ConcurrentHashMap<>();
 	//维护userId和其对应的netId的map(登录用户的缓存)
 	private static ConcurrentHashMap<String, Long> userId2netIdMap = new ConcurrentHashMap<>();
 	
@@ -37,7 +37,7 @@ public class ClientConnectionMap {
 	 */
 	public static ClientConnection getClientConnection(long netId) {
 		
-		ClientConnection connection = allClientMap.get(netId);
+		ClientConnection connection = allClientConnectionMap.get(netId);
 		if(connection != null) {
 			return connection;
 		}
@@ -57,7 +57,7 @@ public class ClientConnectionMap {
 		
 		//获取netId
 		Long netId = ctx.channel().attr(ClientConnection.NETID).get();
-		ClientConnection connection = allClientMap.get(netId);
+		ClientConnection connection = allClientConnectionMap.get(netId);
 		if(connection != null) {
 			return connection;
 		}
@@ -80,7 +80,7 @@ public class ClientConnectionMap {
 		//将clientConnection添加到map中
 		//putIfAbsent会保证如果value != null, 不会覆盖原来的值
 		//logger.info("添加之前allClientMap: {}", allClientMap);
-		if(allClientMap.putIfAbsent(netId, clientConnection) != null) {
+		if(allClientConnectionMap.putIfAbsent(netId, clientConnection) != null) {
 		    //返回值 ！= null, 说明已经存在
 			logger.info("clientConnection已经存在, netId: {}", netId);
 		} else {
@@ -90,31 +90,7 @@ public class ClientConnectionMap {
 		//logger.info("添加之后allClientMap: {}", allClientMap);
 		
 	}
-	
-	
-	/**
-	 * 从map中删除对应的clientConnection
-	 * @param ctx
-	 */
-	public static void removeClientConnection(ChannelHandlerContext ctx) {
-		
-		//获得clientConnection
-		ClientConnection conn = getClientConnection(ctx);
-		if(conn != null) {
-			String userId = conn.getUserId();
-			Long netId = conn.getNetId();
-			if(allClientMap.remove(netId) != null) {
-				logger.info("clientConnection移除成功。");
-				//注销userId
-				unRegisterUserId(userId);
-			}
-			else {
-				logger.error("netId: {} 不存在与map中。", netId);
-			}
-		}
-		
-	}
-	
+
 	
 	/**
 	 * 从map中移除clientConnection
@@ -124,10 +100,10 @@ public class ClientConnectionMap {
 		
 		long netId = clientConnection.getNetId();
 		String userId = clientConnection.getUserId();
-		if(allClientMap.remove(netId) != null) {
+		if(allClientConnectionMap.remove(netId) != null) {
 			logger.info("从缓存中注销clientConnection.");
 			//注销userId
-			unRegisterUserId(userId);
+			unRegisterLoginUser(userId);
 		}
 		else {
 			logger.error("netId: {} 不存在与map中。", netId);
@@ -137,11 +113,11 @@ public class ClientConnectionMap {
 	
 	
 	/**
-	 * 注册userId
+	 * 缓存已经登陆的用户.
 	 * @param userId
 	 * @param netId
 	 */
-	public static void registerUserId(String userId, long netId) {
+	public static void registerLoginUser(String userId, long netId) {
 
 	    if(userId2netIdMap.putIfAbsent(userId, netId) == null) {
 	        //返回值 == null, 说明是新的登陆的用户
@@ -154,31 +130,50 @@ public class ClientConnectionMap {
             } else {
                 logger.error("userId: {} 对应的clientConnection为null.", userId);
             }
-            /*ClientConnection coon2 = ClientConnectionMap.getClientConnection(netId);
-            logger.info("register之后的conn: {}", coon2);*/
+            ClientConnection coon2 = ClientConnectionMap.getClientConnection(netId);
+            logger.info("register之后的conn: {}", coon2);
         } else {
 	        //返回值 ！= null, 说明该用户已经登录
-            logger.error("userId: {} 用户已经登录, 并在userId2netIdMap缓存中注册过!", userId);
+            logger.error("userId: {} 用户已经登录, 并在登录缓存中注册过!", userId);
         }
 
 	}
 	
 	/**
-	 * 注销userId
+	 * 注销登陆的用户.
 	 * @param userId
 	 */
-	public static void unRegisterUserId(String userId) {
+	public static void unRegisterLoginUser(String userId) {
 		
 		if(userId == null) {
 			return;
 		}
 		if(userId2netIdMap.remove(userId) != null) {
-			logger.info("userId={} 注销成功.", userId);
+			logger.info("userId={} 用户注销成功.", userId);
 		}
 		else {
 			logger.error("map中不存在userId={}的键.", userId);
 		}
 	}
+
+
+    /**
+     * 判断用户是否已经登录.
+     * @param userId
+     * @return
+     */
+	public static boolean isUserLogin(String userId) {
+
+		Long netId = userId2netIdMap.get(userId);
+		if(netId != null) {
+			//已经登录并缓存
+			return true;
+		} else {
+			logger.error("用户未登陆, userid: {}", userId);
+			return false;
+		}
+	}
+
 	
 	
 	/**

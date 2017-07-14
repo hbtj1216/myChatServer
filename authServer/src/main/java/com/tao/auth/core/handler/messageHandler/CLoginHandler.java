@@ -60,19 +60,15 @@ public class CLoginHandler extends MsgHandler {
             //验证密码是否输入正确
             String md5_password = Md5Util.md5(password);
             if(userId.equals(user.getUserId()) && md5_password.equals(user.getPassword())) {
-                //密码验证成功，说明登陆成功
-                //向loginMap中缓存登陆的用户
-                AuthServerHandler.putUserIdAndNetId(userId, netId);
+                //密码验证成功
                 RouteUtils.sendResponse(Common.LOGIN_SUCCESS,
-                        "Login success.", netId, userId);
+                            "Login success.", netId, userId);
                 logger.info("Login success. userId = {}", userId);
-                return;
             } else {
                 //验证失败
                 RouteUtils.sendResponse(Common.LOGIN_ERROR,
                         "Login failed, password is wrong.", netId, userId);
                 logger.info("Login failed, password is wrong. userId = {}", userId);
-                return;
             }
         }
 
