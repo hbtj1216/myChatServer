@@ -43,6 +43,7 @@ public class LogicStarter {
         //读取配置文件
         Element logic = XMLUtils.parseXmlFile("logic/logic-config.xml");
 
+        assert logic != null;
         Element logicServerElement = logic.element("logicServer");
         logicServerPort = Integer.valueOf(logicServerElement.attributeValue("ip").trim());
         workerNum = Integer.valueOf(logicServerElement.attributeValue("workerNum").trim());

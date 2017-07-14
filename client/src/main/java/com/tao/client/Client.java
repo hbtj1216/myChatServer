@@ -22,7 +22,6 @@ public class Client {
     private static final int chatServerPort = 9090;         //聊天服务器的port
 
     private static final int clientNum = 1;
-    private static final int frequency = 100;   //100ms
 
 
 

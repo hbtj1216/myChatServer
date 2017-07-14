@@ -38,7 +38,7 @@ public class AuthStarter {
         //读取xml配置文件，配置参数
         Element auth = XMLUtils.parseXmlFile("auth/auth-config.xml");
 
-        //配置authServer、redis、logic
+        //配置authServer
         Element authServerElement = auth.element("authServer");
         authServerPort = Integer.valueOf(authServerElement.attributeValue("port").trim());
         workerNum = Integer.valueOf(authServerElement.attributeValue("workerNum").trim());

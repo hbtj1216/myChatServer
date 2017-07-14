@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <auth id="1">
-    <authServer 	ip = "0.0.0.0" 		port = "8080"       workerNum = "5" />
-    <logic  		ip = "127.0.0.1" 	port = "7070" />
+    <authServer 	    ip = "0.0.0.0" 		port = "8080"       workerNum = "5" />
+    <logicServer  		ip = "127.0.0.1" 	port = "7070" />
 </auth>

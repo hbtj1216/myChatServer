@@ -86,7 +86,8 @@ public class LogicCenter {
      */
     private int getWorkerIndex(String userId) {
 
-        return userId.hashCode() % this.workerNum;
+        //注意：和0x7FFFFFFF与, 是为了保证最后的结果为正值
+        return (userId.hashCode() & 0x7FFFFFFF) % this.workerNum;
     }
 
 }

@@ -2,7 +2,6 @@ package com.tao.auth.core.handler.messageHandler;
 
 import com.google.protobuf.Message;
 import com.tao.auth.core.component.Worker;
-import com.tao.auth.core.constant.AuthConstant;
 import com.tao.auth.core.domain.User;
 import com.tao.auth.core.global.reference.SpringContextHolder;
 import com.tao.auth.core.handler.AuthServerHandler;
@@ -10,6 +9,7 @@ import com.tao.auth.core.handler.MsgHandler;
 import com.tao.auth.core.service.LoginService;
 import com.tao.auth.core.utils.RouteUtils;
 import com.tao.common.security.Md5Util;
+import com.tao.protobuf.constant.Common;
 import com.tao.protobuf.message.client2server.auth.Auth;
 import io.netty.channel.ChannelHandlerContext;
 import org.slf4j.Logger;
@@ -52,7 +52,7 @@ public class CLoginHandler extends MsgHandler {
         User user = loginService.getUserByUserId(userId);
         if(user == null) {
             //用户不存在
-            RouteUtils.sendResponse(AuthConstant.ACCOUNT_INEXIST,
+            RouteUtils.sendResponse(Common.ACCOUNT_INEXIST,
                     "Account not exists.", netId, userId);
             logger.info("Account not exists. userId = {}", userId);
         } else {
@@ -63,13 +63,13 @@ public class CLoginHandler extends MsgHandler {
                 //密码验证成功，说明登陆成功
                 //向loginMap中缓存登陆的用户
                 AuthServerHandler.putUserIdAndNetId(userId, netId);
-                RouteUtils.sendResponse(AuthConstant.LOGIN_SUCCESS,
+                RouteUtils.sendResponse(Common.LOGIN_SUCCESS,
                         "Login success.", netId, userId);
                 logger.info("Login success. userId = {}", userId);
                 return;
             } else {
                 //验证失败
-                RouteUtils.sendResponse(AuthConstant.LOGIN_ERROR,
+                RouteUtils.sendResponse(Common.LOGIN_ERROR,
                         "Login failed, password is wrong.", netId, userId);
                 logger.info("Login failed, password is wrong. userId = {}", userId);
                 return;

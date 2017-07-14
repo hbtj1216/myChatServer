@@ -3,6 +3,7 @@ package com.tao.gate.core.handler;
 import com.tao.gate.core.global.maps.ClientConnectionMap;
 import com.tao.protobuf.analysis.ParseMap;
 import com.tao.protobuf.constant.PtoNum;
+import com.tao.protobuf.message.client2server.auth.Auth;
 import com.tao.protobuf.message.internal.Internal;
 import com.tao.protobuf.utils.ProtobufUtils;
 import org.slf4j.Logger;
@@ -45,7 +46,7 @@ public class GateToAuthConnectionHandler extends SimpleChannelInboundHandler<Mes
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
 		
 		//连接创建成功, 保存ctx到静态域中,便于外部类使用
-		this.gateToAuthConnectionContext = ctx;
+		gateToAuthConnectionContext = ctx;
 		logger.info("[GateServer to AuthServer] 连接已经建立成功.");
 
 		//向AuthServer发送Greet协议消息
@@ -58,7 +59,7 @@ public class GateToAuthConnectionHandler extends SimpleChannelInboundHandler<Mes
 	public void channelInactive(ChannelHandlerContext ctx) throws Exception {
 		
 		//连接断开, 注销
-		this.gateToAuthConnectionContext = null;
+		gateToAuthConnectionContext = null;
 		logger.info("[GateServer to AuthServer] 连接已经断开.");
 	}
 
@@ -78,6 +79,13 @@ public class GateToAuthConnectionHandler extends SimpleChannelInboundHandler<Mes
 		//收到AuthServer发回的消息
 		Internal.GTransfer gtf = (Internal.GTransfer) msg;
 		Message message = ParseMap.getMessage(gtf.getPtoNum(), gtf.getMsg().toByteArray());
+		logger.info("[GateServer] 收到 [AuthServer] 发回的消息 : [{}]", message.getClass().getSimpleName());
+
+		//GateServer从AuthServer收到的是SResponse消息体(登录或者注册的返回信息)
+		//根据消息进行判断
+        Auth.SResponse sResponse = (Auth.SResponse) message;
+        logger.info("code: {}, content: {}", sResponse.getCode(), sResponse.getContent());
+
 		//将消息打包
 		ByteBuf buf = ProtobufUtils.pack2Client(message);
 		//找到对应的客户端连接的ctx, 将消息发送回客户端

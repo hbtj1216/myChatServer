@@ -40,7 +40,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
 
         logger.info("3秒后登录已经注册过的账号...");
         Thread.sleep(3000);
-        login(ctx, "hbtj1216", "1234567890");
+        login(ctx, "hbtj12167", "1234567890");
 
 
     }

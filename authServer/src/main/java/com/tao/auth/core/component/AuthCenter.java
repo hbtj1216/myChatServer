@@ -73,6 +73,7 @@ public class AuthCenter {
             logger.info("MsgHandler is null.");
             return;
         }
+        logger.debug("workerIndex: {}", workerIndex);
         //找到对应的worker, 添加msgHandler
         Worker worker = this.workers[workerIndex];
         worker.addMsgHandler(msgHandler);
@@ -87,7 +88,8 @@ public class AuthCenter {
      */
     private int getWorkerIndex(String userId) {
 
-        return userId.hashCode() % this.workerNum;
+        //注意：和0x7FFFFFFF与, 是为了保证最后的结果为正值
+        return (userId.hashCode() & 0x7FFFFFFF) % this.workerNum;
     }
 
 }

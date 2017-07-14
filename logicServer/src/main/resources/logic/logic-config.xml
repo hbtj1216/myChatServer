@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
 <logic>
-
-    <logicServer    ip="0.0.0.0"    port="7070" workerNum="5" />
-    <redis      ip = "127.0.0.1"    port = "6379" />
+    <logicServer    ip="0.0.0.0"        port="7070"     workerNum="5" />
+    <redis          ip = "127.0.0.1"    port = "6379" />
 </logic>
