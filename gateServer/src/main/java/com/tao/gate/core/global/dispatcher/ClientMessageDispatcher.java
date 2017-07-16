@@ -331,8 +331,9 @@ public final class ClientMessageDispatcher implements Runnable {
 			ByteBuf sendBuf = null;
 			//先判断用户有没有登录
 			if(clientConnection.getUserId() == null) {
-				//用户Id为空，说明没有登录
+				//用户Id为空，说明没有登录就直接发消息
 				logger.info("User not login!");
+				RouteUtils.sendResponse();
 				return;
 			}
 
