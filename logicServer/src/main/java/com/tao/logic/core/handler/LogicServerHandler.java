@@ -4,9 +4,9 @@ import com.google.protobuf.Message;
 import com.tao.logic.core.component.LogicCenter;
 import com.tao.logic.core.global.HandlerManager;
 import com.tao.protobuf.analysis.ParseMap;
+import com.tao.protobuf.message.client2server.chat.Chat;
 import com.tao.protobuf.message.internal.Internal;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.SimpleChannelInboundHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * LogicServer的handler.
- * 负责处理发来LogicServer的消息.
+ * 负责处理来自LogicServer的消息.
  */
 public final class LogicServerHandler extends SimpleChannelInboundHandler<Message> {
 
@@ -37,6 +37,10 @@ public final class LogicServerHandler extends SimpleChannelInboundHandler<Messag
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {
 
+        /**
+         * LogicServer收到了GateServer发来的消息.
+         */
+
         Internal.GTransfer gt = (Internal.GTransfer) msg;
         //获得ptoNum
         int ptoNum = gt.getPtoNum();
@@ -50,8 +54,8 @@ public final class LogicServerHandler extends SimpleChannelInboundHandler<Messag
             logger.info("[LogicServer] 收到来自 [GateServer] 的 Greet 消息.");
             msgHandler = HandlerManager.getMsgHandler(ptoNum, gt.getUserId(), gt.getNetId(),
                     message, ctx);
-        } else {
-            //如果是其他消息(聊天消息)
+        } else if(message instanceof Chat.CChatMsg) {
+            //如果是聊天消息
             logger.info("[LogicServer] 收到来自 [GateServer] 的 {} 消息.", message.getClass().getSimpleName());
             msgHandler = HandlerManager.getMsgHandler(ptoNum, gt.getUserId(), gt.getNetId(),
                     message, getGateConnCtx());

@@ -6,7 +6,7 @@ import com.tao.protobuf.constant.Common;
 import com.tao.protobuf.constant.PtoNum;
 import com.tao.protobuf.message.client2server.auth.Auth;
 import com.tao.protobuf.message.internal.Internal;
-import com.tao.protobuf.utils.ProtobufUtils;
+import com.tao.protobuf.utils.ServerProtoUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -95,7 +95,7 @@ public class GateToAuthConnectionHandler extends SimpleChannelInboundHandler<Mes
             ClientConnectionMap.registerLoginUser(userId, netId);
         }
 		//将消息打包
-		ByteBuf buf = ProtobufUtils.pack2Client(message);
+		ByteBuf buf = ServerProtoUtils.pack2Client(message);
 		//找到对应的客户端连接的ctx, 将消息发送回客户端
 		ClientConnectionMap.getClientConnection(gtf.getNetId()).getCtx().writeAndFlush(buf);
 	}
@@ -108,7 +108,7 @@ public class GateToAuthConnectionHandler extends SimpleChannelInboundHandler<Mes
 		Internal.Greet.Builder greetB = Internal.Greet.newBuilder();
 		greetB.setFrom(Internal.Greet.From.Gate);
 		//包装成GTranser
-		ByteBuf buf = ProtobufUtils.pack2Server(Internal.DestType.Auth, 
+		ByteBuf buf = ServerProtoUtils.pack2Server(Internal.DestType.Auth,
 						-1, "admin", PtoNum.GREET, greetB.build());
 
 		//发送给AuthServer

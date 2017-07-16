@@ -82,9 +82,9 @@ public final class LogicServer implements Runnable {
                     //初始化
                     ParseRegistryMap.initRegistry();    //初始化协议的解析器
                     HandlerManager.initMsgHandlers();   //初始化消息的处理器
-                    logger.info("[AuthServer] started successed, waiting for other server connect...");
+                    logger.info("[LogicServer] started successed, waiting for other server connect...");
                 } else {
-                    logger.info("[AuthServer] started failed.");
+                    logger.info("[LogicServer] started failed.");
                 }
             }
         });

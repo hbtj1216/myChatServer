@@ -1,5 +1,6 @@
 package com.tao.gate.core.global.maps;
 
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.tao.gate.core.domain.ClientConnection;
@@ -66,7 +67,8 @@ public class ClientConnectionMap {
 			return null;
 		}
 	}
-	
+
+
 	
 	/**
 	 * 向map中添加clientConnection
@@ -75,8 +77,6 @@ public class ClientConnectionMap {
 	public static void addClientConnection(ClientConnection clientConnection) {
 		
 		long netId = clientConnection.getNetId();
-		String userId = clientConnection.getUserId();
-		//logger.info("将要被添加到缓存中的ClientConnection. netId: {}, userId: {}", netId, userId);
 		//将clientConnection添加到map中
 		//putIfAbsent会保证如果value != null, 不会覆盖原来的值
 		//logger.info("添加之前allClientMap: {}", allClientMap);
@@ -126,7 +126,7 @@ public class ClientConnectionMap {
             ClientConnection conn = ClientConnectionMap.getClientConnection(netId);
             logger.info("userId: {} 对应的的clientConnection: {}", userId, conn);
             if(conn != null) {
-                conn.setUserId(userId);
+                conn.setUserId(userId);	//设置userId字段
             } else {
                 logger.error("userId: {} 对应的clientConnection为null.", userId);
             }
@@ -190,6 +190,17 @@ public class ClientConnectionMap {
 			logger.error("用户未登陆, userid: {}", userId);
 			return null;
 		}
+	}
+
+
+	/**
+	 * 得到所有的netId
+	 * @return
+	 */
+	public static List<Long> getAllNetId() {
+
+		return (List<Long>) userId2netIdMap.values();
+
 	}
 	
 }

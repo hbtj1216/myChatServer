@@ -18,7 +18,7 @@ public class ClientConnection {
 
 	public static AttributeKey<Long> NETID = AttributeKey.valueOf("netId");
 	//网络id生成器
-	private static final AtomicLong netIdGenerator = new AtomicLong(0);
+	public static final AtomicLong netIdGenerator = new AtomicLong(0);
 	
 	
 	private String userId;	//用户id

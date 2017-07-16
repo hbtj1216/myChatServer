@@ -14,9 +14,9 @@ import io.netty.buffer.Unpooled;
  * @author Tao
  *
  */
-public class ProtobufUtils {
+public class ServerProtoUtils {
 	
-	private ProtobufUtils() {
+	private ServerProtoUtils() {
 		
 	}
 	
@@ -103,24 +103,7 @@ public class ProtobufUtils {
 	}
 
 
-    /**
-     * 将消息封装成发往服务器端的消息, 返回ByteBuf对象.
-     * @param msg
-     * @return
-     */
-	public static ByteBuf pack2Server(Message msg) {
 
-	    byte[] bytes = msg.toByteArray();
-	    int length = bytes.length;
-	    int ptoNum = ParseMap.getPtoNum(msg);
-
-	    ByteBuf sendBuf = Unpooled.buffer(8 + length);
-	    sendBuf.writeInt(length);
-	    sendBuf.writeInt(ptoNum);
-	    sendBuf.writeBytes(bytes);
-
-	    return sendBuf;
-    }
 	
 	
 }

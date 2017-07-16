@@ -42,7 +42,7 @@ public class GateServerHandler extends SimpleChannelInboundHandler<Message>{
 	public void channelActive(ChannelHandlerContext ctx) throws Exception {
 
 		logger.info("新的客户端连接到来...");
-		//创建一个clientConnection对象
+		//创建一个clientConnection对象, 此时userId为null(因为没有登录)
 		ClientConnection clientConnection = new ClientConnection(ctx);
 		//保存客户端连接到ClientConnectionMap
 		ClientConnectionMap.addClientConnection(clientConnection);

@@ -20,7 +20,7 @@ import com.tao.protobuf.constant.PtoNum;
 import com.tao.protobuf.message.client2server.auth.Auth;
 import com.tao.protobuf.message.client2server.chat.Chat;
 import com.tao.protobuf.message.internal.Internal;
-import com.tao.protobuf.utils.ProtobufUtils;
+import com.tao.protobuf.utils.ServerProtoUtils;
 import io.netty.buffer.ByteBuf;
 
 import io.netty.channel.ChannelHandlerContext;
@@ -258,10 +258,11 @@ public final class ClientMessageDispatcher implements Runnable {
 					break;
 
 				/**
-				 * 如果是客户端的聊天消息
+				 * 如果是客户端发送的的聊天消息
 				 */
 				case PtoNum.CCHATMSG:
-					forwardToLogicServer(requestMessage);		//发送给LogicServer服务器处理
+                    forwardToLogicServer(requestMessage);		//发送给logicServer服务器处理
+                    break;
 
 				default:
 					break;
@@ -282,7 +283,7 @@ public final class ClientMessageDispatcher implements Runnable {
 			ByteBuf sendBuf = null;
 			if(message instanceof Auth.CRegister) {
 				//如果是注册消息, 先包装成服务器之间的协议体GTransfer
-				sendBuf = ProtobufUtils.pack2Server(Internal.DestType.Auth,
+				sendBuf = ServerProtoUtils.pack2Server(Internal.DestType.Auth,
 						clientConnection.getNetId(),
 						((Auth.CRegister)message).getUserId(),
 						ParseMap.getPtoNum(message), message);
@@ -301,7 +302,7 @@ public final class ClientMessageDispatcher implements Runnable {
                 } else {
                     //如果未登录
                     //登录消息, 先包装成服务器之间的协议体GTransfer
-                    sendBuf = ProtobufUtils.pack2Server(Internal.DestType.Auth,
+                    sendBuf = ServerProtoUtils.pack2Server(Internal.DestType.Auth,
                             clientConnection.getNetId(),
                             ((Auth.CLogin)message).getUserId(),
                             ParseMap.getPtoNum(message), message);
@@ -319,6 +320,7 @@ public final class ClientMessageDispatcher implements Runnable {
 		}
 
 
+
 		/**
 		 * 聊天消息转发给LogicServer处理.
 		 * @param requestMessage
@@ -328,27 +330,36 @@ public final class ClientMessageDispatcher implements Runnable {
 			ClientConnection clientConnection = requestMessage.getClientConnection();
 			Message message = requestMessage.getMessage();
 
-			ByteBuf sendBuf = null;
 			//先判断用户有没有登录
 			if(clientConnection.getUserId() == null) {
-				//用户Id为空，说明没有登录就直接发消息
+				//用户Id为空, 说明没有登录就直接发消息了
 				logger.info("User not login!");
-				RouteUtils.sendResponse();
-				return;
-			}
+				RouteUtils.sendResponse(Common.CHAT_SENDER_OFFLINE,
+                        "Please login first!", clientConnection);
 
-			//如果已经登录
-			if(message instanceof Chat.CChatMsg) {
-				//如果是客户端发送的聊天消息
-				sendBuf = ProtobufUtils.pack2Server(Internal.DestType.Logic,
-							clientConnection.getNetId(), clientConnection.getUserId(),
-							ParseMap.getPtoNum(message), message);
-			}
+			} else {    //userId不为null, 说明用户已经登录
 
-			//获得Gate到Logic的连接的ctx, 并将消息发送给LogicServer
-			ChannelHandlerContext gate2LogicConnCtx = GateToLogicConnectionHandler.getGateToLogicConnectionContext();
-			gate2LogicConnCtx.channel().writeAndFlush(sendBuf);
+                //如果已经登录
+                if(message instanceof Chat.CChatMsg) {
+
+                    //首先给发送者(客户端)回应, 收到消息
+                    /*RouteUtils.sendResponse2Sender(Common.CHAT_MESSAGE_RECEIVE_SUCCESS,
+                        "Server receive message success.", clientConnection);*/
+
+                    //客户端发送的聊天消息,封装成GTransfer发送给logicServer
+                    ByteBuf sendBuf = ServerProtoUtils.pack2Server(Internal.DestType.Logic,
+                            clientConnection.getNetId(), clientConnection.getUserId(),
+                            ParseMap.getPtoNum(message), message);
+
+                    //获得Gate到Logic的连接的ctx, 并将消息发送给LogicServer
+                    ChannelHandlerContext gate2LogicConnCtx = GateToLogicConnectionHandler.getGateToLogicConnectionContext();
+                    gate2LogicConnCtx.channel().writeAndFlush(sendBuf);
+                    logger.info("[GateServer] send [{}] message to [LogicServer]", message.getClass().getSimpleName());
+                }
+            }
+
 		}
+
 
 	}
 	

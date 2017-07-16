@@ -20,3 +20,12 @@ message CChatMsg {
 message SChatMsg {
 	required string content = 1;	//消息内容
 }
+
+
+/*
+服务器应答消息体
+*/
+message SResponse {
+	required int32 code = 1;		//返回码
+	required string content = 2;	//应答内容
+}

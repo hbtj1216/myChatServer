@@ -16,11 +16,10 @@ import redis.clients.jedis.Jedis;
  */
 public abstract class MsgHandler {
 
-    protected final String userId;  //用户id
-    protected final long netId;     //全局唯一netId
+    protected final String userId;  //用户userId
+    protected final long netId;     //userId对应的全局唯一netId
     protected final Message msg;    //被处理的消息
-    protected ChannelHandlerContext ctx;    //channel上下文
-    protected Jedis jedis;
+    protected ChannelHandlerContext ctx;    //消息来源的channel上下文(并不是用户channel ctx)
 
 
     /**

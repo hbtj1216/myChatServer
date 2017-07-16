@@ -8,7 +8,7 @@ import com.tao.auth.core.handler.AuthServerHandler;
 import com.tao.protobuf.constant.PtoNum;
 import com.tao.protobuf.message.client2server.auth.Auth;
 import com.tao.protobuf.message.internal.Internal;
-import com.tao.protobuf.utils.ProtobufUtils;
+import com.tao.protobuf.utils.ServerProtoUtils;
 import io.netty.buffer.ByteBuf;
 
 /**
@@ -35,7 +35,7 @@ public final class RouteUtils {
         Auth.SResponse sResponse = sb.build();
 
         //sResponse消息
-        ByteBuf sendBuf = ProtobufUtils.pack2Server(Internal.DestType.Client,
+        ByteBuf sendBuf = ServerProtoUtils.pack2Server(Internal.DestType.Client,
                             netId, userId, PtoNum.SRESPONSE, sResponse);
 
         //通过gateServer转发给客户端.
