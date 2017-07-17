@@ -165,8 +165,8 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        sendMessage(ctx, selfId, selfId, "哈喽, 给自己发的消息哦!");
-                        //sendMessage(ctx, selfId, "all", "哈喽, 给所有人发的消息哦!");
+                        //sendMessage(ctx, selfId, selfId, "哈喽, 给自己发的消息哦!");
+                        sendMessage(ctx, selfId, "all", "哈喽, 给所有人发的消息哦!");
                     }
                 }
             }).start();

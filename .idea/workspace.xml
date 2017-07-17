@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="270d2fe7-a114-4b5c-8772-3d30b585c62b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/maps/ClientConnectionMap.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/maps/ClientConnectionMap.java" />
     </list>
     <ignored path="$PROJECT_DIR$/protobuf/target/" />
     <ignored path="$PROJECT_DIR$/client/target/" />
@@ -28,7 +28,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1420">
               <caret line="85" column="24" lean-forward="false" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#3336#3337#0" expanded="false" />
+                <element signature="e#3363#3364#0" expanded="false" />
+                <element signature="e#3400#3401#0" expanded="false" />
+                <element signature="e#3432#3433#0" expanded="false" />
+                <element signature="e#3475#3476#0" expanded="false" />
+                <element signature="e#3509#3510#0" expanded="false" />
+                <element signature="e#3568#3569#0" expanded="false" />
+                <element signature="e#3614#3615#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -43,21 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientConnectionMap.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClientConnectionMap.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/maps/ClientConnectionMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1240">
-              <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state relative-caret-position="140">
+              <caret line="196" column="7" lean-forward="true" selection-start-line="196" selection-start-column="7" selection-end-line="196" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClientHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="168" column="26" lean-forward="false" selection-start-line="168" selection-start-column="26" selection-end-line="168" selection-end-column="26" />
+            <state relative-caret-position="-985">
+              <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,7 +78,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="940">
               <caret line="61" column="73" lean-forward="false" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#3264#3265#0" expanded="false" />
+                <element signature="e#3291#3292#0" expanded="false" />
+                <element signature="e#3328#3329#0" expanded="false" />
+                <element signature="e#3360#3361#0" expanded="false" />
+                <element signature="e#3401#3402#0" expanded="false" />
+                <element signature="e#3434#3435#0" expanded="false" />
+                <element signature="e#3490#3491#0" expanded="false" />
+                <element signature="e#3534#3535#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,16 +108,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
               <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerProtoUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/utils/ServerProtoUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1680">
-              <caret line="90" column="26" lean-forward="false" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -179,9 +189,9 @@
         <option value="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/server/LogicServer.java" />
         <option value="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/dispatcher/ClientMessageDispatcher.java" />
         <option value="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/handler/messageHandler/CChatMsgHandler.java" />
-        <option value="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/maps/ClientConnectionMap.java" />
         <option value="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToLogicConnectionHandler.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java" />
+        <option value="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/maps/ClientConnectionMap.java" />
       </list>
     </option>
   </component>
@@ -2461,12 +2471,12 @@
       <workItem from="1500027857634" duration="3581000" />
       <workItem from="1500187116605" duration="19018000" />
       <workItem from="1500251639998" duration="1471000" />
-      <workItem from="1500257096511" duration="3106000" />
+      <workItem from="1500257096511" duration="7034000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39116000" />
+    <option name="totallyTimeSpent" value="43044000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2479,7 +2489,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1602" height="865" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2491,7 +2500,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5837912" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46565935" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2530,7 +2539,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/constant/AuthConstant.java" />
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/tao/client/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -2674,7 +2682,7 @@
         <state relative-caret-position="280">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2775,7 +2783,7 @@
         <state relative-caret-position="153">
           <caret line="92" column="34" lean-forward="false" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2822,7 +2830,7 @@
         <state relative-caret-position="720">
           <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2851,14 +2859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/maps/ClientConnectionMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1240">
-          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToLogicConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2280">
@@ -2871,7 +2871,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1420">
           <caret line="85" column="24" lean-forward="false" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3336#3337#0" expanded="false" />
+            <element signature="e#3363#3364#0" expanded="false" />
+            <element signature="e#3400#3401#0" expanded="false" />
+            <element signature="e#3432#3433#0" expanded="false" />
+            <element signature="e#3475#3476#0" expanded="false" />
+            <element signature="e#3509#3510#0" expanded="false" />
+            <element signature="e#3568#3569#0" expanded="false" />
+            <element signature="e#3614#3615#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2879,7 +2889,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="940">
           <caret line="61" column="73" lean-forward="false" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3264#3265#0" expanded="false" />
+            <element signature="e#3291#3292#0" expanded="false" />
+            <element signature="e#3328#3329#0" expanded="false" />
+            <element signature="e#3360#3361#0" expanded="false" />
+            <element signature="e#3401#3402#0" expanded="false" />
+            <element signature="e#3434#3435#0" expanded="false" />
+            <element signature="e#3490#3491#0" expanded="false" />
+            <element signature="e#3534#3535#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2915,10 +2935,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="180" column="53" lean-forward="false" selection-start-line="180" selection-start-column="53" selection-end-line="180" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="168" column="26" lean-forward="false" selection-start-line="168" selection-start-column="26" selection-end-line="168" selection-end-column="26" />
+        <state relative-caret-position="-985">
+          <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/maps/ClientConnectionMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="196" column="7" lean-forward="true" selection-start-line="196" selection-start-column="7" selection-end-line="196" selection-end-column="7" />
           <folding />
         </state>
       </provider>

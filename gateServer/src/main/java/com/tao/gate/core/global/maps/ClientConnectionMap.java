@@ -1,5 +1,6 @@
 package com.tao.gate.core.global.maps;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -199,7 +200,9 @@ public class ClientConnectionMap {
 	 */
 	public static List<Long> getAllNetId() {
 
-		return (List<Long>) userId2netIdMap.values();
+		//Collection转List
+        //注意不能直接强制类型转换
+		return  new ArrayList<>(userId2netIdMap.values());
 
 	}
 	
