@@ -93,7 +93,7 @@ public class GateServer implements Runnable {
 					//服务器绑定端口建立监听操作成功返回, 则进行一些初始化操作。
 					if(future.isSuccess()) {
 						//初始化操作
-						//1) 初始化protobuf消息的解析注册
+						//1) 初始化protobuf消息的解析函数
 						ParseRegistryMap.initRegistry();
 						//2) 开启单独的线程, 启动dispatcher分发器
 						startDispatcher();

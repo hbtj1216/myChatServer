@@ -1,4 +1,4 @@
-package com.tao.client;
+package com.tao.client.client1;
 
 import com.tao.protobuf.ParseRegistryMap;
 import com.tao.protobuf.codec.ProtoPacketDecoder;

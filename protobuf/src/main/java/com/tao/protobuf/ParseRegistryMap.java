@@ -35,7 +35,7 @@ public class ParseRegistryMap {
 		
 		//chat
 		ParseMap.register(PtoNum.CCHATMSG, Chat.CChatMsg::parseFrom, Chat.CChatMsg.class);
-		ParseMap.register(PtoNum.SCHATMSG, Chat.SChatMsg::parseFrom, Chat.SChatMsg.class);
+		ParseMap.register(PtoNum.CHATSRESPONSE, Chat.SResponse::parseFrom, Chat.SResponse.class);
 
 		logger.info("消息体的解析函数注册完毕.");
 	}

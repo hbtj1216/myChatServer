@@ -99,6 +99,7 @@ public class ParseMap {
      * @return
      */
     public static Integer getPtoNum(Class<?> clz) {
+
         return msg2ptoNum.get(clz);
     }
 

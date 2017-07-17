@@ -339,7 +339,7 @@ public final class ClientMessageDispatcher implements Runnable {
 
 			} else {    //userId不为null, 说明用户已经登录
 
-                //如果已经登录
+                //判断消息类型
                 if(message instanceof Chat.CChatMsg) {
 
                     //首先给发送者(客户端)回应, 收到消息

@@ -92,7 +92,10 @@ public class ServerProtoUtils {
 		
 		byte[] bytes = msg.toByteArray();
 		int length = bytes.length;
-		int ptoNum = ParseMap.getPtoNum(msg);
+		Integer ptoNum = ParseMap.getPtoNum(msg);
+		if(ptoNum == null) {
+			throw new NullPointerException("ptoNum is null.");
+		}
 		
 		ByteBuf buf = Unpooled.buffer(8 + length);
 		buf.writeInt(length);

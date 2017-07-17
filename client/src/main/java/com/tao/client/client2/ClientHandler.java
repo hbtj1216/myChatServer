@@ -1,4 +1,4 @@
-package com.tao.client;
+package com.tao.client.client2;
 
 import com.google.protobuf.Message;
 import com.tao.protobuf.constant.Common;
@@ -43,7 +43,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
 
         /*logger.info("3秒后注册账号...");
         Thread.sleep(3000);
-        registerAccount(ctx, "hbtj1216", "1234567890", "追风少年");*/
+        registerAccount(ctx, "545554463", "1234567890", "阳春白雪");*/
 
         /*logger.info("3秒后登录已经注册过的账号...");
         Thread.sleep(3000);
@@ -60,7 +60,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
          */
         logger.info("3秒后登录已经注册过的账号...");
         Thread.sleep(3000);
-        login(ctx, "hbtj1216", "1234567890");
+        login(ctx, "545554463", "1234567890");
 
 
     }
@@ -159,9 +159,9 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
 
                     while(login_success) {
 
-                        logger.info("登录成功, userId: {}, 5秒后发送消息!", selfId);
+                        logger.info("登录成功, userId: {}, 7秒后发送消息!", selfId);
                         try {
-                            Thread.sleep(5000);
+                            Thread.sleep(7000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
