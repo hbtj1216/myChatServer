@@ -2,47 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="270d2fe7-a114-4b5c-8772-3d30b585c62b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/utils/ClientProtoUtils.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/utils/ProtobufUtils.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/utils/ProtobufUtils.java" afterPath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/utils/ServerProtoUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/handler/messageHandler/CLoginHandler.class" afterPath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/handler/messageHandler/CLoginHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/handler/messageHandler/CRegisterHandler.class" afterPath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/handler/messageHandler/CRegisterHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/utils/RouteUtils.class" afterPath="$PROJECT_DIR$/authServer/target/classes/com/tao/auth/core/utils/RouteUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/com/tao/client/ClientHandler.class" afterPath="$PROJECT_DIR$/client/target/classes/com/tao/client/ClientHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/domain/ClientConnection.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/domain/ClientConnection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/global/dispatcher/ClientMessageDispatcher$MessageQueueTask.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/global/dispatcher/ClientMessageDispatcher$MessageQueueTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/global/maps/ClientConnectionMap.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/global/maps/ClientConnectionMap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/handler/GateToAuthConnectionHandler.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/handler/GateToAuthConnectionHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/handler/GateToLogicConnectionHandler$1.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/handler/GateToLogicConnectionHandler$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/handler/GateToLogicConnectionHandler.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/handler/GateToLogicConnectionHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/utils/RouteUtils.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/utils/RouteUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/target/classes/com/tao/logic/core/handler/LogicServerHandler.class" afterPath="$PROJECT_DIR$/logicServer/target/classes/com/tao/logic/core/handler/LogicServerHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/target/classes/com/tao/logic/core/handler/MsgHandler.class" afterPath="$PROJECT_DIR$/logicServer/target/classes/com/tao/logic/core/handler/MsgHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/target/classes/com/tao/logic/core/handler/messageHandler/CChatMsgHandler.class" afterPath="$PROJECT_DIR$/logicServer/target/classes/com/tao/logic/core/handler/messageHandler/CChatMsgHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/target/classes/com/tao/logic/core/handler/messageHandler/GreetHandler.class" afterPath="$PROJECT_DIR$/logicServer/target/classes/com/tao/logic/core/handler/messageHandler/GreetHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/target/classes/com/tao/logic/core/server/LogicServer$2.class" afterPath="$PROJECT_DIR$/logicServer/target/classes/com/tao/logic/core/server/LogicServer$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/constant/Common.class" afterPath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/constant/Common.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/message/client2server/chat/Chat$1.class" afterPath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/message/client2server/chat/Chat$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/message/client2server/chat/Chat.class" afterPath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/message/client2server/chat/Chat.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/utils/RouteUtils.java" afterPath="$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/utils/RouteUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/domain/ClientConnection.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/domain/ClientConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/dispatcher/ClientMessageDispatcher.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/dispatcher/ClientMessageDispatcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/maps/ClientConnectionMap.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/maps/ClientConnectionMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateServerHandler.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateServerHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToAuthConnectionHandler.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToAuthConnectionHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToLogicConnectionHandler.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToLogicConnectionHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/utils/RouteUtils.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/utils/RouteUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/handler/LogicServerHandler.java" afterPath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/handler/LogicServerHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/handler/MsgHandler.java" afterPath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/handler/MsgHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/handler/messageHandler/CChatMsgHandler.java" afterPath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/handler/messageHandler/CChatMsgHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/server/LogicServer.java" afterPath="$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/server/LogicServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/constant/Common.java" afterPath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/constant/Common.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/message/client2server/chat/Chat.java" afterPath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/message/client2server/chat/Chat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/src/main/resources/protobuf/client_def/chat.proto" afterPath="$PROJECT_DIR$/protobuf/src/main/resources/protobuf/client_def/chat.proto" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/target/classes/protobuf/client_def/chat.proto" afterPath="$PROJECT_DIR$/protobuf/target/classes/protobuf/client_def/chat.proto" />
     </list>
     <ignored path="$PROJECT_DIR$/protobuf/target/" />
     <ignored path="$PROJECT_DIR$/client/target/" />
@@ -65,21 +26,9 @@
       <file leaf-file-name="LogicServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/server/LogicServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="85" column="24" lean-forward="true" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
+            <state relative-caret-position="1420">
+              <caret line="85" column="24" lean-forward="false" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CChatMsgHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/handler/messageHandler/CChatMsgHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -87,7 +36,7 @@
       <file leaf-file-name="GateToLogicConnectionHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToLogicConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
+            <state relative-caret-position="2280">
               <caret line="136" column="56" lean-forward="false" selection-start-line="136" selection-start-column="56" selection-end-line="136" selection-end-column="56" />
               <folding />
             </state>
@@ -97,7 +46,7 @@
       <file leaf-file-name="ClientConnectionMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/maps/ClientConnectionMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
+            <state relative-caret-position="1240">
               <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
@@ -107,8 +56,18 @@
       <file leaf-file-name="ClientHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="160" column="26" lean-forward="false" selection-start-line="160" selection-start-column="26" selection-end-line="160" selection-end-column="26" />
+            <state relative-caret-position="395">
+              <caret line="168" column="26" lean-forward="false" selection-start-line="168" selection-start-column="26" selection-end-line="168" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/server/AuthServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="940">
+              <caret line="61" column="73" lean-forward="false" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -117,18 +76,18 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/com/tao/client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+            <state relative-caret-position="217">
+              <caret line="70" column="16" lean-forward="true" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GateToAuthConnectionHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToAuthConnectionHandler.java">
+      <file leaf-file-name="AuthStarter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/AuthStarter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="97" column="45" lean-forward="true" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
+            <state relative-caret-position="200">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,18 +96,8 @@
       <file leaf-file-name="ServerProtoUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/utils/ServerProtoUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
+            <state relative-caret-position="1680">
               <caret line="90" column="26" lean-forward="false" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GateServerHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateServerHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="47" column="20" lean-forward="true" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -157,8 +106,18 @@
       <file leaf-file-name="LogicStarter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/LogicStarter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            <state relative-caret-position="64">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GateStarter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/GateStarter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-200">
+              <caret line="59" column="41" lean-forward="true" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -240,9 +199,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="-4" />
-    <option name="width" value="1600" />
-    <option name="height" value="857" />
+    <option name="x" value="-1" />
+    <option name="y" value="-11" />
+    <option name="width" value="1602" />
+    <option name="height" value="865" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1953,8 +1913,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2499,12 +2459,14 @@
       <updated>1500010553632</updated>
       <workItem from="1500010561728" duration="11940000" />
       <workItem from="1500027857634" duration="3581000" />
-      <workItem from="1500187116605" duration="18763000" />
+      <workItem from="1500187116605" duration="19018000" />
+      <workItem from="1500251639998" duration="1471000" />
+      <workItem from="1500257096511" duration="3106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34284000" />
+    <option name="totallyTimeSpent" value="39116000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2516,38 +2478,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1600" height="857" extended-state="6" />
+    <frame x="-1" y="-11" width="1602" height="865" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50549453" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6923077" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5837912" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26997423" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27126288" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50549453" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -2602,7 +2565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2688,7 +2650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2696,14 +2657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/AuthStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -2730,14 +2683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/server/AuthServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="61" column="73" lean-forward="true" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
           <folding />
         </state>
       </provider>
@@ -2789,7 +2734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2797,7 +2741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2849,7 +2792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2857,19 +2799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding>
-            <element signature="e#2164#2165#0" expanded="true" />
-            <element signature="e#2305#2306#0" expanded="true" />
-            <element signature="e#2347#2348#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/GateStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2885,13 +2814,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
           <caret line="356" column="119" lean-forward="false" selection-start-line="356" selection-start-column="119" selection-end-line="356" selection-end-column="119" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/handler/messageHandler/CChatMsgHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
+        <state relative-caret-position="720">
           <caret line="47" column="25" lean-forward="false" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2899,41 +2827,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/LogicStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="47" column="20" lean-forward="true" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/tao/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+        <state relative-caret-position="740">
+          <caret line="47" column="20" lean-forward="false" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToAuthConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="97" column="45" lean-forward="true" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
+        <state relative-caret-position="1600">
+          <caret line="97" column="45" lean-forward="false" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/utils/ServerProtoUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
+        <state relative-caret-position="1680">
           <caret line="90" column="26" lean-forward="false" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
           <folding />
         </state>
@@ -2941,7 +2853,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/maps/ClientConnectionMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
+        <state relative-caret-position="1240">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
         </state>
@@ -2949,7 +2861,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/handler/GateToLogicConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
+        <state relative-caret-position="2280">
           <caret line="136" column="56" lean-forward="false" selection-start-line="136" selection-start-column="56" selection-end-line="136" selection-end-column="56" />
           <folding />
         </state>
@@ -2957,16 +2869,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/core/server/LogicServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="85" column="24" lean-forward="true" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
+        <state relative-caret-position="1420">
+          <caret line="85" column="24" lean-forward="false" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/core/server/AuthServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="940">
+          <caret line="61" column="73" lean-forward="false" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authServer/src/main/java/com/tao/auth/AuthStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicServer/src/main/java/com/tao/logic/LogicStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/GateStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200">
+          <caret line="59" column="41" lean-forward="true" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/com/tao/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="70" column="16" lean-forward="true" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="160" column="26" lean-forward="false" selection-start-line="160" selection-start-column="26" selection-end-line="160" selection-end-column="26" />
+        <state relative-caret-position="395">
+          <caret line="168" column="26" lean-forward="false" selection-start-line="168" selection-start-column="26" selection-end-line="168" selection-end-column="26" />
           <folding />
         </state>
       </provider>

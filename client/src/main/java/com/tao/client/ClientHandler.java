@@ -26,6 +26,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
 
 
     private String selfId = "";    //该客户端登录之后的userId
+    private boolean firstIn = true; //第一次进入
     public volatile boolean login_success = false;  //登录是否成功的标记
 
 
@@ -132,6 +133,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
 
                 default:
                     logger.info("Unknow Code, code : {}", code);
+                    break;
             }
         } else if(msg instanceof Chat.CChatMsg) {
             //如果客户端你收到聊天消息
@@ -145,7 +147,13 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
         }
 
 
+        if(firstIn) {
+
+            firstIn = false;
+
             new Thread(new Runnable() {
+
+
                 @Override
                 public void run() {
 
@@ -160,10 +168,9 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
                         sendMessage(ctx, selfId, selfId, "哈喽, 给自己发的消息哦!");
                         //sendMessage(ctx, selfId, "all", "哈喽, 给所有人发的消息哦!");
                     }
-
                 }
             }).start();
-
+        }
 
     }
 
