@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="270d2fe7-a114-4b5c-8772-3d30b585c62b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/java/com/tao/client/client2/Client.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/java/com/tao/client/client2/ClientHandler.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/main/java/com/tao/client/Test.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/target/classes/com/tao/client/Client$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/target/classes/com/tao/client/Client$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/target/classes/com/tao/client/Client.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/target/classes/com/tao/client/ClientHandler$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/target/classes/com/tao/client/ClientHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/target/classes/com/tao/client/Test.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/main/java/com/tao/client/Client.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/tao/client/client1/Client.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/main/java/com/tao/client/ClientHandler.java" afterPath="$PROJECT_DIR$/client/src/main/java/com/tao/client/client1/ClientHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/global/maps/ClientConnectionMap.class" afterPath="$PROJECT_DIR$/gateServer/target/classes/com/tao/gate/core/global/maps/ClientConnectionMap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/ParseRegistryMap.class" afterPath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/ParseRegistryMap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/analysis/ParseMap.class" afterPath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/analysis/ParseMap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/constant/PtoNum.class" afterPath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/constant/PtoNum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/utils/ServerProtoUtils.class" afterPath="$PROJECT_DIR$/protobuf/target/classes/com/tao/protobuf/utils/ServerProtoUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/dispatcher/ClientMessageDispatcher.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/global/dispatcher/ClientMessageDispatcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/server/GateServer.java" afterPath="$PROJECT_DIR$/gateServer/src/main/java/com/tao/gate/core/server/GateServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/ParseRegistryMap.java" afterPath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/ParseRegistryMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/analysis/ParseMap.java" afterPath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/analysis/ParseMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/constant/PtoNum.java" afterPath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/constant/PtoNum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/utils/ServerProtoUtils.java" afterPath="$PROJECT_DIR$/protobuf/src/main/java/com/tao/protobuf/utils/ServerProtoUtils.java" />
-    </list>
+    <list default="true" id="270d2fe7-a114-4b5c-8772-3d30b585c62b" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/protobuf/target/" />
     <ignored path="$PROJECT_DIR$/client/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -107,8 +83,8 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/com/tao/client/client2/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="160">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2622,12 +2598,12 @@
       <workItem from="1500187116605" duration="19018000" />
       <workItem from="1500251639998" duration="1471000" />
       <workItem from="1500257096511" duration="7034000" />
-      <workItem from="1500272415795" duration="4191000" />
+      <workItem from="1500272415795" duration="4278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47235000" />
+    <option name="totallyTimeSpent" value="47322000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3121,8 +3097,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/com/tao/client/client2/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="160">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
