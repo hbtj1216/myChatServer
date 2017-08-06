@@ -5,5 +5,5 @@
 >
 > authServer -- 认证服务器
 >
-> logicServer -- 逻辑服务器
+> logicServer -- 逻辑服务器1
 
