@@ -43,7 +43,8 @@ public class ProtoPacketDecoder extends ByteToMessageDecoder {
 		 * 消息的结构为：
 		 * 消息长度length(4字节) + ptoNum(4字节) + 消息内容(length字节)
 		 */
-		
+
+		logger.info("消息长度：" + in.readableBytes());
 		//获取消息的长度
 		int length = in.readInt();
 		if(length < 0) {

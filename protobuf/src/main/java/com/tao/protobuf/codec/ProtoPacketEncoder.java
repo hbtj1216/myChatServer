@@ -29,21 +29,31 @@ public class ProtoPacketEncoder extends MessageToByteEncoder<Message> {
 		//将msg转换成bytes数组
 		byte[] bytes = msg.toByteArray();
 		//获得msg对应的ptoNum的值
-		int ptoNum = ParseMap.msg2ptoNum.get(msg);
+		int ptoNum = ParseMap.msg2ptoNum.get(msg.getClass());
+
+		logger.info("bytes数组的长度:" + bytes.length);
+		logger.info("ptoNum: " + ptoNum);
+
 		//计算消息内容的长度
 		int length = bytes.length;
-		
+
 		//加密TODO
-		
+
+		/**
+		 * 协议格式：
+         * 4+4+length
+		 * length(消息内容长度) + ptoNum + 消息内容
+		 */
 		//组装成ByteBuf对象，发送出去
-		ByteBuf buf = Unpooled.buffer(8+length);	//单位:字节
-		//length(4字节) + ptoNum(4字节) + bytes(length字节)
-		buf.writeInt(length);
+		ByteBuf buf = Unpooled.buffer(4 + 4 + length);	//单位:字节
+		//总长度(4字节) + length(4字节) + ptoNum(4字节) + bytes(length字节)
+
+        buf.writeInt(length);
 		buf.writeInt(ptoNum);
 		buf.writeBytes(bytes);
 
 		logger.info("发送了一条消息。remoteAddress: {}, "
-				+ "content length {}, ptoNum: {}", ctx.channel().remoteAddress(), length, ptoNum);
+				+ "sumLen {}, content length {}, ptoNum: {}", ctx.channel().remoteAddress(), length, ptoNum);
 
 		//发送
 		out.writeBytes(buf);

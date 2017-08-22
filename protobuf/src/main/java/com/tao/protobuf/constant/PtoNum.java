@@ -19,4 +19,7 @@ public class PtoNum {
 	// chat
 	public static final int CCHATMSG = 2001;        //客户端聊天协议的ptoNum
 	public static final int CHATSRESPONSE = 2002;   //服务器收到聊天消息的应答协议的ptoNum
+
+	//heartbeat
+	public static final int HEART = 3001;			//心跳
 }

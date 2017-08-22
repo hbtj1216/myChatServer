@@ -1,4 +1,4 @@
-package com.tao.client.client1;
+package com.tao.client.client2;
 
 import com.tao.protobuf.ParseRegistryMap;
 import com.tao.protobuf.codec.ProtoPacketDecoder;
@@ -8,15 +8,16 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Created by michael on 17-7-12.
  */
-public class Client {
+public class Client2 {
 
-    private static final Logger logger = LoggerFactory.getLogger(Client.class);
+    private static final Logger logger = LoggerFactory.getLogger(Client2.class);
 
     private static final String chatServerIp = "127.0.0.1"; //聊天服务器的ip
     private static final int chatServerPort = 9090;         //聊天服务器的port
@@ -27,7 +28,7 @@ public class Client {
 
     public static void main(String[] args) {
 
-        new Client().startClient();
+        new Client2().startClient();
     }
 
 
@@ -48,9 +49,17 @@ public class Client {
 
                         ChannelPipeline pipeline = socketChannel.pipeline();
 
+                        //LengthFieldBasedFrameDecoder
+                        pipeline.addLast("LengthFieldBasedFrameDecoder",
+                                new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE,
+                                        0,
+                                        4,
+                                        4,
+                                        0));
+
                         pipeline.addLast("ProtobufPacketDecoder", new ProtoPacketDecoder());	    //解码器
-                        pipeline.addLast("ProtobufPacketEncoder", new ProtoPacketEncoder());    //编码器
-                        pipeline.addLast("clientHandler", new ClientHandler());                     //客户端消息处理类
+                        pipeline.addLast("clientHandler", new ClientHandler());                   //客户端消息处理类
+                        pipeline.addLast("ProtobufPacketEncoder", new ProtoPacketEncoder());      //编码器
                     }
                 });
 
@@ -81,9 +90,9 @@ public class Client {
 
                 if(channelFuture.isSuccess()) {
                     ParseRegistryMap.initRegistry();
-                    logger.info("Client[{}] connected Gate Successed...", i);
+                    logger.info("Client1[{}] connected Gate Successed...", i);
                 } else {
-                    logger.error("Client[{}] connected Gate Failed", i);
+                    logger.error("Client1[{}] connected Gate Failed", i);
                 }
             }
         });

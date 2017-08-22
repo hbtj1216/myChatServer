@@ -68,7 +68,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {
 
-        logger.info("Client received Server message : {}", msg.getClass().getSimpleName());
+        logger.info("Client1 received Server message : {}", msg.getClass().getSimpleName());
 
         //对收到的服务器消息进行判断
         if(msg instanceof Auth.SResponse) {
@@ -193,7 +193,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
         //向服务器发送登录消息
         ByteBuf sendBuf = ClientProtoUtils.pack2Server(cLogin);
         ctx.writeAndFlush(sendBuf);
-        logger.info("Client send [CLogin] message, userId = {}", userId);
+        logger.info("Client1 send [CLogin] message, userId = {}", userId);
     }
 
 
@@ -213,7 +213,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
         //向服务器发送登录消息
         ByteBuf sendBuf = ClientProtoUtils.pack2Server(cLogin);
         ctx.writeAndFlush(sendBuf);
-        logger.info("Client send [CLogin] message, userId = {}", userId);
+        logger.info("Client1 send [CLogin] message, userId = {}", userId);
     }
 
 
@@ -233,7 +233,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<Message> {
         //向服务器发送注册消息
         ByteBuf sendBuf = ClientProtoUtils.pack2Server(cRegister);
         ctx.writeAndFlush(sendBuf);
-        logger.info("Client send [CRegister] message to Server, userId = {}", userId);
+        logger.info("Client1 send [CRegister] message to Server, userId = {}", userId);
 
     }
 

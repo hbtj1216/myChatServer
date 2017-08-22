@@ -4,9 +4,12 @@ import java.net.InetSocketAddress;
 
 import com.tao.gate.core.global.dispatcher.ClientMessageDispatcher;
 import com.tao.gate.core.handler.GateServerHandler;
+import com.tao.gate.core.handler.GateServerHeartbeatHandler;
 import com.tao.protobuf.ParseRegistryMap;
 import com.tao.protobuf.codec.ProtoPacketDecoder;
 import com.tao.protobuf.codec.ProtoPacketEncoder;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
+import io.netty.handler.timeout.IdleStateHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -70,10 +73,29 @@ public class GateServer implements Runnable {
 					protected void initChannel(SocketChannel ch) throws Exception {
 						
 						ChannelPipeline pipeline = ch.pipeline();
-						
-						pipeline.addLast("ProtobufPacketDecoder", new ProtoPacketDecoder());	//解码器
-						pipeline.addLast("ProtobufPacketEncoder", new ProtoPacketEncoder());	//编码器
-						pipeline.addLast("GateServerHandler", new GateServerHandler());	//消息处理器
+
+
+                        //服务器每隔10秒检测一次READER_IDLE
+                        pipeline.addLast("IdleStateHandler", new IdleStateHandler(10,
+                                                                                        0,
+                                                                                        0));
+
+						//LengthFieldBasedFrameDecoder
+						pipeline.addLast("LengthFieldBasedFrameDecoder",
+                                new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE,
+                                                                0,
+                                                                4,
+                                                                4,
+                                                                0));
+                        //解码器
+						pipeline.addLast("ProtobufPacketDecoder", new ProtoPacketDecoder());
+                        //gateServer心跳处理程序
+                        pipeline.addLast("GateServerHeartbeatHandler", new GateServerHeartbeatHandler("gateServer"));
+                        //消息处理器
+						pipeline.addLast("GateServerHandler", new GateServerHandler());
+                        //编码器
+                        pipeline.addLast("ProtobufPacketEncoder", new ProtoPacketEncoder());
+
 					}
 				});
 			

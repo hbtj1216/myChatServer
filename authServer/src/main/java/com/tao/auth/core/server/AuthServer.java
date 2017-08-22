@@ -15,6 +15,7 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -57,9 +58,17 @@ public class AuthServer implements Runnable {
 
                         ChannelPipeline pipeline = ch.pipeline();
 
+                        //LengthFieldBasedFrameDecoder
+                        pipeline.addLast("LengthFieldBasedFrameDecoder",
+                                new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE,
+                                        0,
+                                        4,
+                                        4,
+                                        0));
+
                         pipeline.addLast("ProtobufPacketDecoder", new ProtoPacketDecoder());	//解码器
-                        pipeline.addLast("ProtobufPacketEncoder", new ProtoPacketEncoder());	//编码器
                         pipeline.addLast("AuthServerHandler", new AuthServerHandler(authCenter));
+                        pipeline.addLast("ProtobufPacketEncoder", new ProtoPacketEncoder());	//编码器
                     }
                 });
 

@@ -1,0 +1,13 @@
+option java_package = "com.tao.protobuf.message.othres.heartbeat";
+option java_outer_classname = "Heartbeat";
+
+enum MsgType{
+    Ping = 1;
+    Pong = 2;
+}
+
+message Heart {
+    required MsgType type = 1;
+}
+
+

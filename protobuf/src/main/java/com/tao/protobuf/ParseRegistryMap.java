@@ -6,6 +6,7 @@ import com.tao.protobuf.constant.PtoNum;
 import com.tao.protobuf.message.client2server.auth.Auth;
 import com.tao.protobuf.message.client2server.chat.Chat;
 import com.tao.protobuf.message.internal.Internal;
+import com.tao.protobuf.message.othres.heartbeat.Heartbeat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,6 +37,8 @@ public class ParseRegistryMap {
 		//chat
 		ParseMap.register(PtoNum.CCHATMSG, Chat.CChatMsg::parseFrom, Chat.CChatMsg.class);
 		ParseMap.register(PtoNum.CHATSRESPONSE, Chat.SResponse::parseFrom, Chat.SResponse.class);
+
+		ParseMap.register(PtoNum.HEART, Heartbeat.Heart::parseFrom, Heartbeat.Heart.class);
 
 		logger.info("消息体的解析函数注册完毕.");
 	}

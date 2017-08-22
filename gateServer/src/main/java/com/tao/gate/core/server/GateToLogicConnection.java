@@ -3,6 +3,7 @@ package com.tao.gate.core.server;
 import com.tao.gate.core.handler.GateToLogicConnectionHandler;
 import com.tao.protobuf.codec.ProtoPacketDecoder;
 import com.tao.protobuf.codec.ProtoPacketEncoder;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -66,11 +67,19 @@ public class GateToLogicConnection implements Runnable {
 				protected void initChannel(SocketChannel ch) throws Exception {
 
 					ChannelPipeline pipeline = ch.pipeline();
-					
+
+                    //LengthFieldBasedFrameDecoder
+                    pipeline.addLast("LengthFieldBasedFrameDecoder",
+                            new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE,
+                                    0,
+                                    4,
+                                    4,
+                                    0));
+
 					pipeline.addLast("ProtobufPacketDecoder", new ProtoPacketDecoder());	//解码器
-					pipeline.addLast("ProtobufPacketEncoder", new ProtoPacketEncoder());	//编码器
                     //处理从Logic发往Gate的消息的 handler
                     pipeline.addLast("GateToLogicConnectionHandler", new GateToLogicConnectionHandler());
+                    pipeline.addLast("ProtobufPacketEncoder", new ProtoPacketEncoder());	//编码器
 				}
 			});
 		
