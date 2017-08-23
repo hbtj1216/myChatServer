@@ -76,7 +76,7 @@ public class GateServer implements Runnable {
 
 
                         //服务器每隔10秒检测一次READER_IDLE
-                        pipeline.addLast("IdleStateHandler", new IdleStateHandler(10,
+                        pipeline.addLast("IdleStateHandler", new IdleStateHandler(14,
                                                                                         0,
                                                                                         0));
 
@@ -143,7 +143,7 @@ public class GateServer implements Runnable {
 		serverBootstrap.childOption(ChannelOption.SO_LINGER, 0);
 		serverBootstrap.childOption(ChannelOption.TCP_NODELAY, true);
 		serverBootstrap.childOption(ChannelOption.SO_REUSEADDR, true); //调试用
-		serverBootstrap.childOption(ChannelOption.SO_KEEPALIVE, true); //心跳机制暂时使用TCP选项，之后再自己实现
+		//serverBootstrap.childOption(ChannelOption.SO_KEEPALIVE, true); //心跳机制暂时使用TCP选项，之后再自己实现
 	}
 
 

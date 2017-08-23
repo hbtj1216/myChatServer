@@ -56,7 +56,7 @@ public class Client1 {
                         //5秒检查一次read write idle
                         pipeline.addLast("IdleStateHandler", new IdleStateHandler(0,
                                                                                         0,
-                                                                                        5, TimeUnit.SECONDS));
+                                                                                        7, TimeUnit.SECONDS));
 
                         //LengthFieldBasedFrameDecoder
                         pipeline.addLast("LengthFieldBasedFrameDecoder",

@@ -12,6 +12,7 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.timeout.IdleStateEvent;
+import io.netty.util.ReferenceCountUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,7 +25,11 @@ public class CustomHeartbeatHandler extends SimpleChannelInboundHandler<Message>
     private static final Logger logger = LoggerFactory.getLogger(CustomHeartbeatHandler.class);
 
     protected String name;
+
+    //心跳发送的次数
     private int heartbeatCount = 0;
+    //心跳失败次数
+    protected int failCount = 0;
 
 
     public CustomHeartbeatHandler(String name) {
@@ -35,11 +40,15 @@ public class CustomHeartbeatHandler extends SimpleChannelInboundHandler<Message>
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         logger.info("===" + ctx.channel().remoteAddress() + " is active.===");
+        //注意一定要向后边的业务handler传递这个事件,否则后边的handler就被屏蔽了
+        ctx.fireChannelActive();
     }
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         logger.info("===" + ctx.channel().remoteAddress() + " is inactive.===");
+        //注意一定要向后边的业务handler传递这个事件,否则后边的handler就被屏蔽了
+        ctx.fireChannelInactive();
     }
 
 
@@ -51,7 +60,10 @@ public class CustomHeartbeatHandler extends SimpleChannelInboundHandler<Message>
             Heartbeat.Heart heart = (Heartbeat.Heart) msg;
             //判断是Ping还是Pong
             if(heart.getType() == Heartbeat.MsgType.Ping) {
-                //如果收到的是Ping消息, 那么发送Pong消息
+
+                //首先将失败计数器归0
+                failCount = 0;
+                //如果收到的是Ping消息, 那么向客户端回送Pong消息
                 sendPongMsg(ctx);
             } else {
                 //如果是Pong消息
@@ -59,6 +71,7 @@ public class CustomHeartbeatHandler extends SimpleChannelInboundHandler<Message>
             }
         } else {
             //如果不是心跳消息, 略过, 传递给下一个handler
+            //注意一定要向后边的业务handler传递这个事件,否则后边的handler就被屏蔽了
             ctx.fireChannelRead(msg);
         }
     }
@@ -67,6 +80,9 @@ public class CustomHeartbeatHandler extends SimpleChannelInboundHandler<Message>
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
 
+        cause.printStackTrace();
+        //注意一定要向后边的业务handler传递这个事件,否则后边的handler就被屏蔽了
+        ctx.fireExceptionCaught(cause);
     }
 
     /**
