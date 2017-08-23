@@ -4,6 +4,7 @@ package com.tao.gate.core.handler;
  * Created by michael on 17-8-22.
  */
 
+import com.google.protobuf.Message;
 import com.tao.common.heartbeat.CustomHeartbeatHandler;
 import io.netty.channel.ChannelHandlerContext;
 import org.slf4j.Logger;
@@ -41,6 +42,13 @@ public class GateServerHeartbeatHandler extends CustomHeartbeatHandler {
             ctx.close();
         }
 
+    }
 
+
+    @Override
+    protected void channelRead0(ChannelHandlerContext ctx, Message msg) throws Exception {
+        super.channelRead0(ctx, msg);
+        //收到客户端你消息，说明没断线，将心跳失败计数器归0
+        failCounter = 0;
     }
 }
