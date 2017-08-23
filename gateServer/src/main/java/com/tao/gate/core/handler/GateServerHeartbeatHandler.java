@@ -16,6 +16,9 @@ public class GateServerHeartbeatHandler extends CustomHeartbeatHandler {
 
     private static final Logger logger = LoggerFactory.getLogger(GateServerHeartbeatHandler.class);
 
+    //心跳失败的计数器
+    private int failCounter = 0;
+
 
     public GateServerHeartbeatHandler(String name) {
         super(name);
@@ -26,15 +29,18 @@ public class GateServerHeartbeatHandler extends CustomHeartbeatHandler {
     protected void handleReaderIdle(ChannelHandlerContext ctx) {
         super.handleReaderIdle(ctx);
 
-        if(super.failCount >= 3) {
-            failCount = 0;
-            logger.error("连续丢失三个心跳包,断开Client [" + ctx.channel().remoteAddress().toString() + "] 的连接.");
-            ctx.close();
+        //没有收到客户端的心跳
+        failCounter++;
+        logger.error("没有收到Client [" + ctx.channel().remoteAddress().toString() + "] 的心跳包, 失败计数器+1, failCount: " + failCounter);
 
-        } else {
-            //没有收到客户端的心跳
-            super.failCount++;
-            logger.error("没有收到Client [" + ctx.channel().remoteAddress().toString() + "] 的心跳包, 失败计数器+1, failCount: " + failCount);
+        if(failCounter >= 3) {
+            failCounter = 0;
+            logger.error("连续丢失三个心跳包,断开Client [" + ctx.channel().remoteAddress().toString() + "] 的连接.");
+
+            //关闭客户端的连接
+            ctx.close();
         }
+
+
     }
 }

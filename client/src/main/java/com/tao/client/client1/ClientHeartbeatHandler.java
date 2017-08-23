@@ -41,6 +41,7 @@ public class ClientHeartbeatHandler extends CustomHeartbeatHandler {
         logger.info("TCP连接断开了, 客户端10s后尝试重新连接服务器...");
         //调用doConnect()连接服务器
         Thread.sleep(10*1000);
+        //重连
         Client1.doConnect();
         //注意一定要向后边的业务handler传递这个事件,否则后边的handler就被屏蔽了
         ctx.fireChannelInactive();

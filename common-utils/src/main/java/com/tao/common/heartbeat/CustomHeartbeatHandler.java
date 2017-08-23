@@ -12,7 +12,6 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.timeout.IdleStateEvent;
-import io.netty.util.ReferenceCountUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,8 +27,6 @@ public class CustomHeartbeatHandler extends SimpleChannelInboundHandler<Message>
 
     //心跳发送的次数
     private int heartbeatCount = 0;
-    //心跳失败次数
-    protected int failCount = 0;
 
 
     public CustomHeartbeatHandler(String name) {
@@ -60,9 +57,6 @@ public class CustomHeartbeatHandler extends SimpleChannelInboundHandler<Message>
             Heartbeat.Heart heart = (Heartbeat.Heart) msg;
             //判断是Ping还是Pong
             if(heart.getType() == Heartbeat.MsgType.Ping) {
-
-                //首先将失败计数器归0
-                failCount = 0;
                 //如果收到的是Ping消息, 那么向客户端回送Pong消息
                 sendPongMsg(ctx);
             } else {
